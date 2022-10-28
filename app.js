@@ -8,6 +8,10 @@ app.get('/', (req, res) => {
 })
 
 
+app.get('ping', (req, res) => {
+    res.send('pong')
+})
+
 
 
 
