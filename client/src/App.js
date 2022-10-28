@@ -1,36 +1,24 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 
-const HomeFeed = () => {
-  return (
-    <div className="home-page">
-      <h1>Homepage</h1>
-        <nav>
-          <Link to='/getreal/profile' >Profile</Link>
-          <br/>
-          <Link to='/getreal/watchlist' >Watchlist</Link>
-        </nav>
-    </div>
-  )
-}
+import HomeFeed from './components/HomeFeed'
+import WatchList from './components/WatchList'
+import Search from './components/Search'
+import UserProfile from './components/UserProfile'
+import Profile from './components/Profile'
 
 
-const WatchList = () => {
-  return <h1>Watchlist</h1>
-}
-
-
-const Profile = () => {
-  return <h1>Profile</h1>
-}
 
 function App() {
   return (
     <div className="App">
+      <Link to='/getreal'>go home</Link>
       <Routes>
         <Route path='/getreal' element={<HomeFeed />} />
         <Route path='/getreal/profile' element={<Profile />} />
         <Route path='/getreal/watchlist' element={<WatchList />} />
+        <Route path='/getreal/search' element={<Search />} />
+        <Route path='/getreal/user-profile' element={<UserProfile />} />
       </Routes> 
     </div>
   );
