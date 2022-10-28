@@ -5,6 +5,8 @@ const passportLocalMongoose = require('passport-local-mongoose')
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     age: { type: Number, required: true },
+    gender: {type: String, required: true},
+    preferences: {type: String, requried: true},
     location: { type: String, required: true }, 
     profileImg: { type: String, required: true },
     galleryImg: [String],

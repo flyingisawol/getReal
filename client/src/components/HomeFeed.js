@@ -12,6 +12,8 @@ const HomeFeed = () => {
             <Link to='/getreal/search' >Search</Link>
             <br/>
             <Link to='/getreal/user-profile' >User profile</Link>
+            <br/>
+            <Link to='/getreal/login' >Login</Link>
           </nav>
       </div>
     )

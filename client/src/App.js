@@ -6,6 +6,7 @@ import WatchList from './components/WatchList'
 import Search from './components/Search'
 import UserProfile from './components/UserProfile'
 import Profile from './components/Profile'
+import Login from './components/Login'
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/getreal/watchlist' element={<WatchList />} />
         <Route path='/getreal/search' element={<Search />} />
         <Route path='/getreal/user-profile' element={<UserProfile />} />
+        <Route path='/getreal/login' element={<Login />} />
       </Routes> 
     </div>
   );
