@@ -16,16 +16,16 @@ import CreateProfile from './components/CreateProfile'
 function App() {
   return (
     <div className="App">
-      <Link to='/getreal'>go home</Link>
+      <Link to='/api/getreal'>go home</Link>
       <Routes>
-        <Route path='/getreal/createprofile' element={<CreateProfile/>} />
-        <Route path='/getreal' element={<HomeFeed />} />
-        <Route path='/getreal/profile' element={<Profile />} />
-        <Route path='/getreal/watchlist' element={<WatchList />} />
-        <Route path='/getreal/search' element={<Search />} />
-        <Route path='/getreal/user-profile' element={<UserProfile />} />
-        <Route path='/getreal/login' element={<Login />} />
-        <Route path='/getreal/register' element={<Register />} />
+        <Route path='/api/getreal/createprofile' element={<CreateProfile/>} />
+        <Route path='/api/getreal' element={<HomeFeed />} />
+        <Route path='/api/getreal/profile' element={<Profile />} />
+        <Route path='/api/getreal/watchlist' element={<WatchList />} />
+        <Route path='/api/getreal/search' element={<Search />} />
+        <Route path='/api/getreal/user-profile' element={<UserProfile />} />
+        <Route path='/api/getreal/login' element={<Login />} />
+        <Route path='/api/getreal/register' element={<Register />} />
       </Routes> 
     </div>
   );
