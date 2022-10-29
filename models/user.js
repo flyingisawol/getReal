@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     gender: {type: String, required: true},
     preferences: {type: String, requried: true},
     location: { type: String, required: true }, 
-    profileImg: { type: String, required: true },
+    profileImg: { type: File, required: true },
     galleryImg: [String],
     description: String,
     reviews: [{

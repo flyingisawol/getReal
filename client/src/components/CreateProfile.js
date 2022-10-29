@@ -1,19 +1,19 @@
 import { useNavigate } from 'react-router-dom'
 
 const CreateProfile = () => {  
-// const navigate = useNavigate()
+const navigate = useNavigate()
 
-// const handleSubmit = async (event) => {
-//     event.preventDefault()
-//     const formData = new FormData(event.target)
-//     const res = await fetch('/api/getreal', {
-//       method: 'POST',
-//       body: formData
-//     })
-//     const data = await res.json()
-//     setPosts([ data, ...posts ])
-//     navigate('/getreal/personality')
-//   }
+const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const res = await fetch('/api/getreal/create', {
+      method: 'POST',
+      body: formData
+    })
+    // const data = await res.json()
+    // setPosts([ data, ...posts ])
+    // navigate('/getreal/personality')
+  }
 
     // name
     //profileImg
@@ -24,7 +24,7 @@ const CreateProfile = () => {
     //personality 
 
   return (
-    <form onSubmit>
+    <form onSubmit={handleSubmit}>
       <input
         name="name"
         type="text"
@@ -32,7 +32,7 @@ const CreateProfile = () => {
         placeholder="full-name"
       />
       <br /> 
-      <label for="profileImg">Upload profile pic</label>
+      <label htmlFor="profileImg">Upload profile pic</label>
       <input
         name="profileImg"
         required
@@ -47,14 +47,14 @@ const CreateProfile = () => {
         placeholder="age"
       />
       <br />
-      <label for="gender">Gender</label>
+      <label htmlFor="gender">Gender</label>
         <select name="gender" id="gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
         </select>
       <br />
-      <label for="preferences">Sexual preference</label>
+      <label htmlFor="preferences">Sexual preference</label>
         <select name="preferences" id="preferences">
             <option value="male">male</option>
             <option value="female">female</option>
