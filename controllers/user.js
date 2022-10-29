@@ -24,6 +24,13 @@ router.get('/api/getreal/:id', upload.single('image'), async (req, res) => {
     res.json(user)
 })
 
+//create route 
+
+router.post('/api/getreal/create', upload.single('image'), async (req, res) => {
+
+})
+
+
 
 module.exports = router
 

@@ -14,6 +14,8 @@ const HomeFeed = () => {
             <Link to='/getreal/user-profile' >User profile</Link>
             <br/>
             <Link to='/getreal/login' >Login</Link>
+            <br/>
+            <Link to='/getreal/createprofile' >Create profile</Link>
           </nav>
       </div>
     )

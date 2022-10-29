@@ -9,6 +9,7 @@ import UserProfile from './components/UserProfile'
 import Profile from './components/Profile'
 import Login from './components/Login'
 import Register from './components/Register'
+import CreateProfile from './components/CreateProfile'
 
 
 
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Link to='/getreal'>go home</Link>
       <Routes>
+        <Route path='/getreal/createprofile' element={<CreateProfile/>} />
         <Route path='/getreal' element={<HomeFeed />} />
         <Route path='/getreal/profile' element={<Profile />} />
         <Route path='/getreal/watchlist' element={<WatchList />} />
