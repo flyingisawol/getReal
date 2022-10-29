@@ -14,6 +14,7 @@ const Rate = require('./models/rate')
 console.log(User)
 
 
+
 const PORT = process.env.PORT
 const dbURL = process.env.MONGODB_URL
 const MongoDBStore = mongoDBSession(session)
@@ -31,8 +32,8 @@ app.use(session({
     store: sessionStore
 }))
 
-
 app.use(userController)
+
 
 mongoose.connect(dbURL, () => {
     console.log('Connected to db')

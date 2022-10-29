@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const passportLocalMongoose = require('passport-local-mongoose')
+// const passportLocalMongoose = require('passport-local-mongoose')
 
 
 const userSchema = new mongoose.Schema({
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     watchList: [Object]
 })
 
-userSchema.plugin(passportLocalMongoose)
+// userSchema.plugin(passportLocalMongoose)
 
 const User = mongoose.model('User', userSchema)
 
