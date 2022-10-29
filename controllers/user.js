@@ -10,6 +10,7 @@ const upload = require('../middlewares/upload')
 
 router.get('/api/getreal', async (req, res) => {
     const users = await User.find()
+    console.log(users)
     //.sort() how users will appear/ most active?/ most personality matches
     res.json(users)
 })
@@ -18,7 +19,7 @@ router.get('/api/getreal', async (req, res) => {
 
 //show route 
 
-router.get('/api/getreal/:id', upload.single('image'), async (req, res) => {
+router.get('/api/getreal/:id', upload.single('profileImg'), async (req, res) => {
     let user = await User.findById(req.params.id).populate('author')
     //AUTHORISATION HERE
     res.json(user)
@@ -26,8 +27,14 @@ router.get('/api/getreal/:id', upload.single('image'), async (req, res) => {
 
 //create route 
 
-router.post('/api/getreal/create', upload.single('image'), async (req, res) => {
+router.post('/api/getreal/create', upload.single('profileImg'), async (req, res) => {
 
+    let user = {
+        ...req.body,
+        profileImg: req.file?.path,
+      }
+    const userProfile = await User.create(user)
+    res.json(userProfile)
 })
 
 

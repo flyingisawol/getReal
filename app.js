@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 const express = require('express')
-const app = express()
 const passport = require('passport')
 const mongoose = require('mongoose')
 const session = require('express-session')
@@ -14,7 +13,7 @@ const Rate = require('./models/rate')
 console.log(User)
 
 
-
+const app = express()
 const PORT = process.env.PORT
 const dbURL = process.env.MONGODB_URL
 const MongoDBStore = mongoDBSession(session)
@@ -31,6 +30,8 @@ app.use(session({
     saveUninitialized: false,
     store: sessionStore
 }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.use(userController)
 
