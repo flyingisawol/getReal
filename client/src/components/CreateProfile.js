@@ -15,14 +15,6 @@ const handleSubmit = async (event) => {
     // navigate('/getreal/personality')
   }
 
-    // name
-    //profileImg
-    //age
-    //gender 
-    //preferences
-    //location
-    //personality 
-
   return (
     <form onSubmit={handleSubmit}>
       <input
