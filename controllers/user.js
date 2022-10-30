@@ -4,10 +4,7 @@ const User = require('../models/user')
 const Rate = require('../models/rate')
 const upload = require('../middlewares/upload')
 
-
-//homepage 
-
-
+//INDEX 
 router.get('/api/getreal', async (req, res) => {
     const users = await User.find()
     console.log(users)
@@ -15,18 +12,14 @@ router.get('/api/getreal', async (req, res) => {
     res.json(users)
 })
 
-
-
-//show route 
-
+//SHOW 
 router.get('/api/getreal/:id', upload.single('profileImg'), async (req, res) => {
     let user = await User.findById(req.params.id).populate('author')
     //AUTHORISATION HERE
     res.json(user)
 })
 
-//create route 
-
+//CREATE
 router.post('/api/getreal/create', upload.single('profileImg'), async (req, res) => {
 
     let user = {
@@ -36,8 +29,6 @@ router.post('/api/getreal/create', upload.single('profileImg'), async (req, res)
     const userProfile = await User.create(user)
     res.json(userProfile)
 })
-
-
 
 module.exports = router
 

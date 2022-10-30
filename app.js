@@ -12,7 +12,6 @@ const User = require('./models/user')
 const Rate = require('./models/rate')
 console.log(User)
 
-
 const app = express()
 const PORT = process.env.PORT
 const dbURL = process.env.MONGODB_URL
@@ -34,7 +33,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use(userController)
-
 
 mongoose.connect(dbURL, () => {
     console.log('Connected to db')
