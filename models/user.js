@@ -1,26 +1,27 @@
-const mongoose = require('mongoose')
-// const passportLocalMongoose = require('passport-local-mongoose')
+const mongoose = require("mongoose")
 
-
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     name: { type: String, required: true },
     age: { type: Number, required: true },
-    gender: {type: String, required: true},
-    preferences: {type: String, requried: true},
-    location: { type: String, required: true }, 
-    profileImg: { type: File, required: true },
+    gender: { type: String, required: true },
+    preferences: { type: String, requried: true },
+    location: { type: String, required: true },
+    profileImg: { type: String, required: true },
     galleryImg: [String],
     description: String,
-    reviews: [{
+    reviews: [
+      {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Rate"
-      }],
+        ref: "Rate",
+      },
+    ],
     personality: [{ type: String, required: true }],
-    watchList: [Object]
-})
+    watchList: [Object],
+  },
+  { timestamps: true }
+)
 
-// userSchema.plugin(passportLocalMongoose)
-
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model("User", userSchema)
 
 module.exports = User

@@ -12,11 +12,7 @@ const User = require('./models/user')
 const Rate = require('./models/rate')
 console.log(User)
 
-<<<<<<< HEAD
-=======
-
 const app = express()
->>>>>>> 542e2e694d24f339b0bf13323f9285d836e56882
 const PORT = process.env.PORT
 const dbURL = process.env.MONGODB_URL
 const MongoDBStore = mongoDBSession(session)
