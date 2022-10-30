@@ -11,12 +11,12 @@ import Login from './components/Login'
 import Register from './components/Register'
 import CreateProfile from './components/CreateProfile'
 import SearchResults from './components/SearchResults'
+
 import Header from './components/Header'
-
-
 
 function App() {
   const [query, setQuery] = useState(null)
+
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -27,7 +27,6 @@ function App() {
     }
     getProfiles()
   }, [])
-
 
   return (
     <div className="App">
@@ -41,6 +40,7 @@ function App() {
         <Route path='/api/getreal/search' element={<Search query={query} setQuery={setQuery} />} />
         <Route path='/api/getreal/searchresults' element={<SearchResults />} />
         <Route path='/api/getreal/:id' element={<UserProfile />} />
+        <Route path='/api/getreal/user-profile' element={<UserProfile />} />
         <Route path='/api/getreal/login' element={<Login />} />
         <Route path='/api/getreal/register' element={<Register />} />
       </Routes> 

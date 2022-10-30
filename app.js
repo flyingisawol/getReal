@@ -10,7 +10,6 @@ const userController = require('./controllers/user')
 
 const User = require('./models/user')
 const Rate = require('./models/rate')
-//console.log(User)
 
 const app = express()
 const PORT = process.env.PORT
