@@ -14,7 +14,7 @@ const handleSubmit = async (event) => {
     // setPosts([ data, ...posts ])
     // navigate('/getreal/personality')
   }
-  
+
   return (
     <form onSubmit={handleSubmit}>
       <input
