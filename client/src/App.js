@@ -10,10 +10,12 @@ import Profile from './components/Profile'
 import Login from './components/Login'
 import Register from './components/Register'
 import CreateProfile from './components/CreateProfile'
+import SearchResults from './components/SearchResults'
 
 
 
 function App() {
+  const [query, setQuery] = useState(null)
   return (
     <div className="App">
       <Link to='/api/getreal'>go home</Link>
@@ -22,7 +24,8 @@ function App() {
         <Route path='/api/getreal' element={<HomeFeed />} />
         <Route path='/api/getreal/profile' element={<Profile />} />
         <Route path='/api/getreal/watchlist' element={<WatchList />} />
-        <Route path='/api/getreal/search' element={<Search />} />
+        <Route path='/api/getreal/search' element={<Search query={query} setQuery={setQuery} />} />
+        <Route path='/api/getreal/searchresults' element={<SearchResults />} />
         <Route path='/api/getreal/user-profile' element={<UserProfile />} />
         <Route path='/api/getreal/login' element={<Login />} />
         <Route path='/api/getreal/register' element={<Register />} />
