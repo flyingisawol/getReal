@@ -39,8 +39,7 @@ router.post(
   }
 );
 
+
+
 module.exports = router;
 
-// code is running. results are not being filtered ??
-// how do we display resultsArray? do we update state to display this?
-// how do we send to front end ?
