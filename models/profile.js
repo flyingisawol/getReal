@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
 const profileSchema = new mongoose.Schema(
   {
@@ -10,6 +10,10 @@ const profileSchema = new mongoose.Schema(
     profileImg: { type: String, required: true },
     galleryImg: [String],
     description: String,
+    creator: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     reviews: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -20,8 +24,8 @@ const profileSchema = new mongoose.Schema(
     watchList: [Object],
   },
   { timestamps: true }
-);
+)
 
-const Profile = mongoose.model("Profile", profileSchema);
+const Profile = mongoose.model("Profile", profileSchema)
 
-module.exports = Profile;
+module.exports = Profile
