@@ -15,15 +15,14 @@ const Register = () => {
     };
 
     try {
-      const res = await fetch(
-        "/api/getreal/register",
+      const res = await fetch("/api/getreal/register",
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        },
-        navigate("/api/getreal/createprofile")
-      );
+          body: JSON.stringify(data)
+        }
+        ) 
+      navigate("/api/getreal/createprofile");
     } catch (error) {
       console.log(error);
     }

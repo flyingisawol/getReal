@@ -1,18 +1,20 @@
 import { useNavigate } from 'react-router-dom'
+import {useEffect, useState} from 'react'
 
 const CreateProfile = () => {  
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)
     const res = await fetch('/api/getreal/create', {
       method: 'POST',
       body: formData
     })
-    // const data = await res.json()
+    //recieves incoming data from create route
+    const data = await res.json()
     // setPosts([ data, ...posts ])
-    // navigate('/getreal/personality')
+    navigate('/getreal/personality')
   }
 
   return (
