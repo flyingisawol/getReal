@@ -2,7 +2,7 @@ const express = require("express")
 const passport = require("passport")
 const router = express.Router()
 const User = require("../models/user")
-const Profile = require('../models/profile')
+const Profile = require("../models/profile")
 
 const authenticate = (req, res, next) => {
   const auth = passport.authenticate("local", (err, user, info) => {
@@ -22,10 +22,10 @@ router.post("/api/getreal/register", async (req, res) => {
   const { username, password } = req.body
   try {
     const user = await User.register(new User({ username: username }), password)
-    const userProfile = await Profile.create({creator: user})    
+    const userProfile = await Profile.create({ creator: user })
     req.login(user, () => {
-      const {username, id} = user
-      res.json({username, id})
+      const { username, id } = user
+      res.json({ username, id })
     })
   } catch (error) {
     console.log(error)
@@ -58,4 +58,3 @@ router.get("/loggedin-user", (req, res) => {
 })
 
 module.exports = router
-
