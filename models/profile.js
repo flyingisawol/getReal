@@ -2,12 +2,12 @@ const mongoose = require("mongoose")
 
 const profileSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    age: { type: Number, required: true },
-    gender: { type: String, required: true },
-    preferences: { type: String, requried: true },
-    location: { type: String, required: true },
-    profileImg: { type: String, required: true },
+    name: { type: String, required: false },
+    age: { type: Number, required: false },
+    gender: { type: String, required: false },
+    preferences: { type: String, required: false },
+    location: { type: String, required: false },
+    profileImg: { type: String, required: false },
     galleryImg: [String],
     description: String,
     creator: {
@@ -20,8 +20,11 @@ const profileSchema = new mongoose.Schema(
         ref: "Rate",
       },
     ],
-    personality: [{ type: String, required: true }],
-    watchList: [Object],
+    personality: [{ type: String, required: false }],
+    watchList: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Profile"
+    }],
   },
   { timestamps: true }
 )
@@ -29,3 +32,6 @@ const profileSchema = new mongoose.Schema(
 const Profile = mongoose.model("Profile", profileSchema)
 
 module.exports = Profile
+
+
+
