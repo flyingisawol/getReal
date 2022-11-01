@@ -9,7 +9,7 @@ const Header = ({ user, setUser, profiles }) => {
       <br />
       <Link to="/api/getreal/search">Search</Link>
       <br />
-      <Link to="/api/getreal/editprofile">edit profile</Link>
+      <Link to="/api/getreal/edit/profile">edit profile</Link>
       <br />
       <Link to="/api/getreal/watchlist">Watchlist</Link>
       <br />
