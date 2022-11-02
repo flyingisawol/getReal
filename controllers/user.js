@@ -56,7 +56,6 @@ router.delete("/api/getreal/delete", async (req, res) => {
   res.json(deletedUser)
 })
 
-//DELETE CONFIRM
 
 //SHOW
 router.get(
