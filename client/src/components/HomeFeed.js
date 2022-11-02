@@ -14,6 +14,9 @@ const HomeFeed = ({profiles}) => {
         {profiles.map((profile) => <Profile profile={profile} />)}
 
         <h1>getREAL</h1>
+
+      <Link to='/api/getreal/showall'>Show all users</Link>
+
       </div>
     )
   }

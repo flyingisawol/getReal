@@ -4,16 +4,6 @@ import {useState, useEffect} from 'react'
 
 const Profile = ({profile}) => {
 
-  useEffect(() => {
-    const getProfiles = async () => {
-      const res = await fetch('/api/getreal')
-      const data  = res.json()
-      console.log(data)
-    }
-    getProfiles()
-  }, [])
-
-
     return (
       <div className='posts'>
         <Link to={`/api/getreal/${profile._id}`}>

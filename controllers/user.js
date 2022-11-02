@@ -11,14 +11,24 @@ const upload = require("../middlewares/upload")
 const { remove } = require("../models/profile")
 // const searchController = require('./search')
 
-//INDEX
-router.get("/api/getreal", async (req, res) => {
+//SHOW ALL
+router.get("/api/getreal/showall", async (req, res) => {
   const users = await Profile.find()
-  //.sort() how users will appear/ most active?/ most personality matches
   res.json(users)
 })
 
-// router.use(ensureLogin.ensureLoggedIn());
+//INDEX
+router.get('/api/getreal', async (req, res) => {
+  const loggedInProfile = await Profile.findOne({creator: req.user.id})
+  const loggedInLocation = loggedInProfile.location.toLowerCase()
+  const allProfiles = await Profile.find()
+
+  const sameLocation = allProfiles.filter((profile) => {
+    return profile.location.toLowerCase() === loggedInLocation
+  })
+  res.json(sameLocation)
+
+})
 
 //CREATE
 router.post(
@@ -79,6 +89,8 @@ router.put('/api/getreal/removewatchlist', async (req, res) => {
 })
 
 
+
+
 //SHOW
 router.get(
   "/api/getreal/:id",
@@ -125,7 +137,12 @@ router.post('/api/getreal/search', async (req, res) => {
   }
   res.json(resultsArray)
 })
-//SEARCH RESULTS
-// router.get()
+
+
+
+
+
+
+
 
 module.exports = router

@@ -10,6 +10,7 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
+import ShowAll from './components/ShowAll'
 
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
@@ -76,6 +77,7 @@ function App() {
           element={<Login setUser={setUser} />}
         />
         <Route path="/api/getreal/register" element={<Register />} />
+        <Route path="/api/getreal/showall" element={<ShowAll />} />
       </Routes>
     </div>
   )
