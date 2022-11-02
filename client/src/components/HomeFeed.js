@@ -10,12 +10,12 @@ const HomeFeed = ({profiles}) => {
 
         <h1>getREAL</h1>
         <h2>Homepage</h2>
+        <Link to='/api/getreal/showall'>Show all users</Link>
 
         {profiles.map((profile) => <Profile profile={profile} />)}
 
-        <h1>getREAL</h1>
 
-      <Link to='/api/getreal/showall'>Show all users</Link>
+
 
       </div>
     )
