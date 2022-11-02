@@ -9,15 +9,14 @@ const Header = ({ user, setUser, profiles }) => {
       <br />
       <Link to="/api/getreal/search">Search</Link>
       <br />
-      <Link to="/api/getreal/edit/profile">edit profile</Link>
+      <Link to="/api/getreal/edit">edit profile</Link>
       <br />
       <Link to="/api/getreal/watchlist">Watchlist</Link>
       <br />
-      {user ? (
-        <LogoutButton setUser={setUser} />
-      ) : (
-        <Link to="/api/getreal/login">Login</Link>
-      )}
+      {user ? (<LogoutButton setUser={setUser} />) : (<Link to="/api/getreal/login">Login</Link>)}
+      <br />
+      {user ? <p>Logged in as {user.username}</p> : (<Link to="/api/getreal/register">Register</Link>)}
+
     </nav>
   )
 }
