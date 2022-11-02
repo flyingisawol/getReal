@@ -13,8 +13,15 @@ const EditProfile = ({ user }) => {
     const data = await res.json()
     console.log(data)
   }
+  
+  const handleDelete = async (event) => {
+    const res = await fetch('/api/getreal/delete', { method: 'DELETE' })
+    const data = await res.json()
+    console.log(data)
+  }
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <input name="name" type="text" required placeholder="full-name" />
       <br />
@@ -41,6 +48,8 @@ const EditProfile = ({ user }) => {
       <br />
       <input type="submit" value="Edit profile" />
     </form>
+    <button onClick={handleDelete}>Delete</button>
+    </>
   )
 }
 

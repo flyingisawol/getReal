@@ -48,6 +48,15 @@ router.put(
 )
 
 //DELETE
+router.delete("/api/getreal/delete", async (req, res) => {
+  let user = await Profile.findOne({ creator: req.user.id })
+  console.log(user)
+  await Profile.findOneAndDelete({ creator: req.user.id })
+  let deletedUser = await User.findByIdAndDelete(req.user.id)
+  res.json(deletedUser)
+})
+
+//DELETE CONFIRM
 
 //SHOW
 router.get(
