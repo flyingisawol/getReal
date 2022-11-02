@@ -8,6 +8,7 @@ const Profile = require("../models/profile")
 const Rate = require("../models/rate")
 const User = require("../models/user")
 const upload = require("../middlewares/upload")
+const { remove } = require("../models/profile")
 // const searchController = require('./search')
 
 //INDEX
@@ -54,6 +55,27 @@ router.delete("/api/getreal/delete", async (req, res) => {
   await Profile.findOneAndDelete({ creator: req.user.id })
   let deletedUser = await User.findByIdAndDelete(req.user.id)
   res.json(deletedUser)
+})
+
+
+
+//WATCHLIST
+router.get('/api/getreal/watchlist', async (req, res) => {
+  const userProfile = await Profile.findOne({creator: req.user.id})
+  res.json(userProfile)
+})
+
+
+//REMOVE FROM WATCHLIST
+router.put('/api/getreal/removewatchlist', async (req, res) => {
+  const {id} = req.body
+  const loggedInProfile = await Profile.findOne({creator: req.user.id})
+  const removeMatch = loggedInProfile.watchList.filter((match) => {
+    return match.toString() !== id
+  })
+  loggedInProfile.watchList = removeMatch
+  await loggedInProfile.save()
+  res.json(loggedInProfile)
 })
 
 
