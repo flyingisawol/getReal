@@ -89,4 +89,22 @@ router.put("/match", async (req, res) => {
   // await findProfile.save()
 })
 
+//SEARCH
+router.post('/api/getreal/search', async (req, res) => {
+  const {searchTerm} = req.query 
+  console.log(typeof searchTerm)
+  const profiles = await Profile.find()
+  let resultsArray = []
+
+  for (profile of profiles) {
+    if (profile.location.toLowerCase() === searchTerm.toLowerCase()) {
+      resultsArray.push(profile)
+      console.log(resultsArray)
+    }
+  }
+  res.json(resultsArray)
+})
+//SEARCH RESULTS
+// router.get()
+
 module.exports = router
