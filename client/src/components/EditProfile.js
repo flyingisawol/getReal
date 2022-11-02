@@ -1,7 +1,38 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+
 
 const EditProfile = ({ user }) => {
-  console.log("TEST", user)
+
+  const [modalShow, setModalShow] = useState(false);
+
+  function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Hold up!
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Please note</h4>
+          <p>
+              Deleting your profile will de-register you from GetReal. You will need to register again if you want to start a new profile. 
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+          <Button onClick={handleDelete}>Delete</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -48,7 +79,16 @@ const EditProfile = ({ user }) => {
       <br />
       <input type="submit" value="Edit profile" />
     </form>
-    <button onClick={handleDelete}>Delete</button>
+    <>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Delete
+      </Button>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
     </>
   )
 }
