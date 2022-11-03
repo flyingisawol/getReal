@@ -58,6 +58,7 @@ const EditProfile = ({ user }) => {
 
   return (
     <>
+    <div className='content-body'>
     <form onSubmit={handleSubmit}>
       <input name="name" type="text" required placeholder="full-name" />
       <br />
@@ -124,6 +125,7 @@ const EditProfile = ({ user }) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
         />
+      </div>
       </div>
       </>
   )
