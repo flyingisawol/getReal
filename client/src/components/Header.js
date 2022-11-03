@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import LogoutButton from "./LogoutButton"
 import ProfileLink from "./ProfileLink"
 
-const Header = ({ user, setUser, profiles }) => {
+const Header = ({ user, setUser }) => {
   return (
     <nav>
       {/* <ProfileLink user={user}/> */}

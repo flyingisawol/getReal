@@ -32,16 +32,6 @@ function App() {
     }
     getLoggedInUser()
   }, [])
-  
-  //RETRIEVE USER PROFILES
-  useEffect(() => {
-    const getProfiles = async () => {
-      const res = await fetch("/api/getreal")
-      const data = await res.json()
-      setProfiles(data)
-    }
-    getProfiles()
-  }, [])
 
   return (
     <div className="App">
@@ -50,7 +40,7 @@ function App() {
       <Routes>
         <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />
-        <Route path="/getreal" element={<HomeFeed profiles={profiles} user={user}/>} />
+        <Route path="/getreal" element={<HomeFeed user={user}/>} />
         <Route path="/getreal/profile" element={<Profile />} />
         <Route
           path="/getreal/edit"
