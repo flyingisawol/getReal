@@ -24,7 +24,6 @@ const Register = () => {
         ) 
       navigate("/getreal/createprofile");
     } catch (error) {
-      console.log(error);
     }
   };
 

@@ -13,8 +13,9 @@ import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
 import ShowAll from './components/ShowAll'
 import Questionnaire from "./components/Questionnaire"
-import Header from "./components/Header"
+import Nav from "./components/Nav"
 import EditProfile from "./components/EditProfile"
+import "./App.css"
 
 function App() {
   const navigate = useNavigate()
@@ -35,8 +36,8 @@ function App() {
   
   return !user ?  <Login setUser={setUser} /> : (
     <div className="App">
-      {user && <Link to="/getreal">Home</Link>}
-      <Header user={user} setUser={setUser} profiles={profiles} />
+      
+      {/* {user && <Link to="/getreal">Home</Link>} */}
       <Routes>
         <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />
@@ -61,6 +62,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/getreal/showall" element={<ShowAll />} />
       </Routes>
+      <Nav user={user} setUser={setUser} profiles={profiles} />
     </div>
     )
 }

@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const profileSchema = new mongoose.Schema(
   {
     name: { type: String, required: false },
-    age: { type: Number, required: false },
+    age: { type: Number, min: 18, required: false},
     gender: { type: String, required: false },
     preferences: { type: String, required: false },
     location: { type: String, required: false },
