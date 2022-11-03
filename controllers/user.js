@@ -71,7 +71,7 @@ router.delete("/api/getreal/delete", async (req, res) => {
 
 //WATCHLIST
 router.get('/api/getreal/watchlist', async (req, res) => {
-  const userProfile = await Profile.findOne({creator: req.user.id})
+  const userProfile = await Profile.findOne({creator: req.user.id}).populate('watchList')
   res.json(userProfile)
 })
 
@@ -79,9 +79,9 @@ router.get('/api/getreal/watchlist', async (req, res) => {
 //REMOVE FROM WATCHLIST
 router.put('/api/getreal/removewatchlist', async (req, res) => {
   const {id} = req.body
-  const loggedInProfile = await Profile.findOne({creator: req.user.id})
+  const loggedInProfile = await Profile.findOne({creator: req.user.id}).populate('watchList')
   const removeMatch = loggedInProfile.watchList.filter((match) => {
-    return match.toString() !== id
+    return match.id !== id
   })
   loggedInProfile.watchList = removeMatch
   await loggedInProfile.save()
@@ -114,10 +114,10 @@ router.get("/data/:id", async (req, res) => {
 
 //MATCHES
 router.put("/match", async (req, res) => {
-  const findProfile = await Profile.findOne({ creator: req.user.id })
-  findProfile.watchList.unshift(req.body.id)
+  const findProfile = await Profile.findOne({ creator: req.user.id }) //finding logged in user
+  findProfile.watchList.unshift(req.body.id) //add matched profile ids
   await findProfile.save()
-  res.json(findProfile)
+  res.json(findProfile)  //send logged in user profile with updated watchlist 
 
   // await findProfile.save()
 })

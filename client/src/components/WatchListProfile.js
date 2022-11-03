@@ -3,6 +3,7 @@
 
 const WatchListProfile = ({profile, loggedInProfile, removeFromWatchlist}) => {
 
+    console.log(profile, loggedInProfile)
 
 
     const handleRemoveWatchlist = (event) => {
@@ -13,6 +14,7 @@ const WatchListProfile = ({profile, loggedInProfile, removeFromWatchlist}) => {
                 body: JSON.stringify({id: profile._id})
             })
             const data = await res.json()
+            console.log(data)
             removeFromWatchlist(data)
         }
         removeWatchlist()
@@ -20,13 +22,11 @@ const WatchListProfile = ({profile, loggedInProfile, removeFromWatchlist}) => {
 
     return (
         <>
-            {loggedInProfile.watchList.includes(profile._id) && 
             <> 
                 <p>{profile.name}</p> 
                 <button value={profile._id} onClick={handleRemoveWatchlist}>remove from watchlist</button>
                 <img src={profile.profileImg} alt={profile.name} />
             </>
-            }       
         </>
     )
 }
