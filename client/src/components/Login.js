@@ -37,27 +37,31 @@ const Login = ({ setUser }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="login-page">
+      <div className="form">
+      <form onSubmit={handleSubmit}>
       {error && <p>{error.msg}</p>}
-      <label htmlFor="login-username">Username</label>
       <input
         onChange={handleChange}
         value={fields.username}
         name="username"
         id="login-username"
         type="text"
+        placeholder="username"
       />
 
-      <label htmlFor="login-password">Password</label>
       <input
         onChange={handleChange}
         value={fields.password}
         name="password"
         id="login-password"
         type="Password"
+        placeholder="password"
       />
       <input type="submit" value="Login" />
     </form>
+    </div>
+    </div>
   )
 }
 

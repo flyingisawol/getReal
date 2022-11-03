@@ -19,6 +19,7 @@ const Search = () => {
 
   return (
     <>
+    <div className="content-body">
       <h3>Find others in your area</h3>
       <form onSubmit={handleSearchSubmit}>
         <input
@@ -41,6 +42,7 @@ const Search = () => {
       {results.map((result) => (
         <SearchResults result={result} />
       ))}
+      </div>
     </>
   )
 }

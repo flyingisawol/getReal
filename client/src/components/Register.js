@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const data = {
       username: username,
       password: password,
@@ -18,17 +18,18 @@ const Register = () => {
       const res = await fetch("/api/getreal/register",
         {
           method: "post",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json"},
           body: JSON.stringify(data)
         }
         ) 
-      navigate("/getreal/createprofile");
+      navigate("/getreal/createprofile")
     } catch (error) {
     }
   };
 
   return (
     <>
+      <div className='content-body'>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -48,8 +49,9 @@ const Register = () => {
         />
         <input type="submit" value="Register" />
       </form>
+      </div>
     </>
-  );
-};
+  )
+}
 
 export default Register;
