@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import { useNavigate } from 'react-router-dom'
 
 
 const EditProfile = ({ user }) => {
+  const navigate = useNavigate()
 
   const [modalShow, setModalShow] = useState(false);
 
@@ -43,6 +45,7 @@ const EditProfile = ({ user }) => {
     })
     const data = await res.json()
     console.log(data)
+    // navigate('/api/getreal/user')
   }
   
   const handleDelete = async (event) => {
@@ -77,18 +80,15 @@ const EditProfile = ({ user }) => {
       <br />
       <input name="location" type="text" required placeholder="location" />
       <br />
-      <input type="submit" value="Edit profile" />
+      <input type="submit" value="Save" />
     </form>
-    <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Delete
       </Button>
-
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-    </>
     </>
   )
 }

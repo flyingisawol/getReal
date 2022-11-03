@@ -54,6 +54,7 @@ router.put(
   upload.single("profileImg"),
   async (req, res) => {
     let user = await Profile.findOneAndUpdate({ creator: req.user.id }, req.body, { new: true })
+    console.log(user)
     res.json(user)
   }
 )
@@ -120,6 +121,15 @@ router.put("/match", async (req, res) => {
   res.json(findProfile)  //send logged in user profile with updated watchlist 
 
   // await findProfile.save()
+})
+
+//DATA-PERSONALITY
+
+router.post("/personality", async (req, res) => {
+  const findProfile = await Profile.findOne({ creator: req.user.id })
+  findProfile.personality.push(...req.body)
+  await findProfile.save()
+  res.json(findProfile)
 })
 
 //SEARCH

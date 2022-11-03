@@ -11,7 +11,8 @@ import Register from "./components/Register"
 import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
 import ShowAll from './components/ShowAll'
-
+import Questionnaire from "./components/Questionnaire"
+import ShowAll from './components/ShowAll'
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
 
@@ -41,23 +42,14 @@ function App() {
     }
     getLoggedInUser()
   }, [])
-
-  // useEffect(() => {
-  //   const getLoggedInID = async () => {
-  //     const res = await fetch('/logggedin-user')
-  //     const loggedInUser = await res.json()
-  //     setLoggedInID(loggedInUser.id)
-  //   }
-  //   getLoggedInID()
-  //   console.log(loggedInID)
-  // }, [])
-
+  
   return (
     <div className="App">
       <Link to="/api/getreal">go home</Link>
       <Header user={user} setUser={setUser} profiles={profiles} />
       <Routes>
         <Route path="/api/getreal/createprofile" element={<CreateProfile />} />
+        <Route path="/getreal/questionnaire" element={<Questionnaire />} />
         <Route path="/api/getreal" element={<HomeFeed profiles={profiles} />} />
         <Route path="/api/getreal/profile" element={<Profile />} />
         <Route
