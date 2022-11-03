@@ -12,7 +12,6 @@ import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
 import ShowAll from './components/ShowAll'
 import Questionnaire from "./components/Questionnaire"
-import ShowAll from './components/ShowAll'
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
 
