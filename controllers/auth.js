@@ -34,13 +34,13 @@ router.post("/api/getreal/register", async (req, res) => {
 
 // login
 
-router.post("/login", authenticate, (req, res) => {
+router.post("/api/login", authenticate, (req, res) => {
   //console.log("logged in", req.user)
   const { id, username } = req.user
   res.json({ id, username })
 })
 
-router.post("/logout", (req, res) => {
+router.post("/api/logout", (req, res) => {
   req.logout(() => {
     res.json({
       msg: "Logged out",
@@ -48,7 +48,7 @@ router.post("/logout", (req, res) => {
   })
 })
 
-router.get("/loggedin-user", (req, res) => {
+router.get("/api/loggedin-user", (req, res) => {
   if (req.user) {
     const { id, username } = req.user
     res.json({ id, username })

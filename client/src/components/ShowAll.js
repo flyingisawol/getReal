@@ -25,9 +25,6 @@ const ShowAll = () => {
                         <img src={profile.profileImg} alt={profile.name} />
                     </Link>
 
-                    <h1>{profile.name}</h1>
-                    <img src={profile.profileImg} alt={profile.name} />
-
                     <p>Age: {profile.age}</p>
                     <p>Location: {profile.location}</p>
                 </div>)}
