@@ -17,6 +17,7 @@ const WatchList = () => {
 
   return (
     <>
+    <div className="content-body">
       <h1>Watchlist</h1>
       {loggedInProfile
         ? loggedInProfile.watchList.map((profile) => (
@@ -27,6 +28,7 @@ const WatchList = () => {
             />
           ))
         : null}
+        </div>
     </>
   )
 }

@@ -12,7 +12,9 @@ const LogoutButton = ({ setUser }) => {
     }
   
     return (
-      <button onClick={handleClick}>Logout</button>
+      <div className="logoutBtn">
+        <button onClick={handleClick}><img src="../images/logout.png" alt=""/></button>
+      </div>
     )
   }
   

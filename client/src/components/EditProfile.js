@@ -56,6 +56,7 @@ const EditProfile = ({ user }) => {
   return (
     <>
     <form onSubmit={handleSubmit}>
+      <div className="content-body">
       <input name="name" type="text" required placeholder="full-name" />
       <br />
       <label htmlFor="profileImg">Upload profile pic</label>
@@ -80,6 +81,7 @@ const EditProfile = ({ user }) => {
       <input name="location" type="text" required placeholder="location" />
       <br />
       <input type="submit" value="Save" />
+      </div>
     </form>
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Delete

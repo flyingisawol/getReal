@@ -15,6 +15,7 @@ const ShowAll = () => {
 
   return (
     <>
+      <div className='content-body'>
       {p &&
         p.map((profile) => (
           <div className="show-all">
@@ -27,6 +28,7 @@ const ShowAll = () => {
             <p>Location: {profile.location}</p>
           </div>
         ))}
+        </div>
     </>
   )
 }

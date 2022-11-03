@@ -59,6 +59,7 @@ const UserProfile = () => {
         <h1>Loading</h1>
       ) : (
         <>
+        <div className="content-body">
           <h1>{profile.name}</h1>
           <img src={profile.profileImg} alt={profile.name} />
           <Button variant="primary" onClick={() => setModalShow(true)}>
@@ -68,6 +69,7 @@ const UserProfile = () => {
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
+          </div>
         </>
       )}
     </div>
