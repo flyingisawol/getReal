@@ -11,14 +11,14 @@ import Register from "./components/Register"
 import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
 import Questionnaire from "./components/Questionnaire"
-
+import ShowAll from './components/ShowAll'
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
 
 function App() {
   const [user, setUser] = useState(null)
   const [query, setQuery] = useState(null)
-  const [loggedInID, setLoggedInID] = useState(null)
+  //const [loggedInID, setLoggedInID] = useState(null)
   const [profiles, setProfiles] = useState([])
 
   //grabs all profiles
@@ -65,7 +65,7 @@ function App() {
           path="/api/getreal/edit"
           element={<EditProfile user={user} />}
         />
-        <Route path="/api/getreal/watchlist" element={<WatchList />} />
+        <Route path="/api/getreal/watchlist" element={<WatchList profiles={profiles} />} />
         <Route
           path="/api/getreal/search"
           element={<Search query={query} setQuery={setQuery} />}
@@ -78,6 +78,7 @@ function App() {
           element={<Login setUser={setUser} />}
         />
         <Route path="/api/getreal/register" element={<Register />} />
+        <Route path="/api/getreal/showall" element={<ShowAll />} />
       </Routes>
     </div>
   )

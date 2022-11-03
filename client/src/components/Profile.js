@@ -1,7 +1,9 @@
 import { Routes, Route, Link } from 'react-router-dom'
+import {useState, useEffect} from 'react'
 
 
 const Profile = ({profile}) => {
+
     return (
       <div className='posts'>
         <Link to={`/api/getreal/${profile._id}`}>
@@ -9,7 +11,6 @@ const Profile = ({profile}) => {
           <img src={profile.profileImg} alt={profile.name} />
         </Link>
         <p>Age: {profile.age}</p>
-        <p>Preferences: {profile.preferences}</p>
         <p>Location: {profile.location}</p>
 
       </div>

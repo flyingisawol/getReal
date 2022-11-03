@@ -1,8 +1,8 @@
 import { Routes, Route, Link } from 'react-router-dom'
 
-const SearchResults = () => {
+const SearchResults = ({result}) => {
     return (
-        <h2>results</h2>
+        <p>{result.name}</p>
     )
 }
 

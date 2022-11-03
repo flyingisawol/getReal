@@ -8,16 +8,27 @@ const Profile = require("../models/profile")
 const Rate = require("../models/rate")
 const User = require("../models/user")
 const upload = require("../middlewares/upload")
+const { remove } = require("../models/profile")
 // const searchController = require('./search')
 
-//INDEX
-router.get("/api/getreal", async (req, res) => {
+//SHOW ALL
+router.get("/api/getreal/showall", async (req, res) => {
   const users = await Profile.find()
-  //.sort() how users will appear/ most active?/ most personality matches
   res.json(users)
 })
 
-// router.use(ensureLogin.ensureLoggedIn());
+//INDEX
+router.get('/api/getreal', async (req, res) => {
+  const loggedInProfile = await Profile.findOne({creator: req.user.id})
+  const loggedInLocation = loggedInProfile.location.toLowerCase()
+  const allProfiles = await Profile.find()
+
+  const sameLocation = allProfiles.filter((profile) => {
+    return profile.location.toLowerCase() === loggedInLocation
+  })
+  res.json(sameLocation)
+
+})
 
 //CREATE
 router.post(
@@ -55,6 +66,29 @@ router.delete("/api/getreal/delete", async (req, res) => {
   let deletedUser = await User.findByIdAndDelete(req.user.id)
   res.json(deletedUser)
 })
+
+
+
+//WATCHLIST
+router.get('/api/getreal/watchlist', async (req, res) => {
+  const userProfile = await Profile.findOne({creator: req.user.id})
+  res.json(userProfile)
+})
+
+
+//REMOVE FROM WATCHLIST
+router.put('/api/getreal/removewatchlist', async (req, res) => {
+  const {id} = req.body
+  const loggedInProfile = await Profile.findOne({creator: req.user.id})
+  const removeMatch = loggedInProfile.watchList.filter((match) => {
+    return match.toString() !== id
+  })
+  loggedInProfile.watchList = removeMatch
+  await loggedInProfile.save()
+  res.json(loggedInProfile)
+})
+
+
 
 
 //SHOW
@@ -96,5 +130,28 @@ router.post("/personality", async (req, res) => {
   await findProfile.save()
   res.json(findProfile)
 })
+
+//SEARCH
+router.post('/api/getreal/search', async (req, res) => {
+  const {searchTerm} = req.query 
+  console.log(typeof searchTerm)
+  const profiles = await Profile.find()
+  let resultsArray = []
+
+  for (profile of profiles) {
+    if (profile.location.toLowerCase() === searchTerm.toLowerCase()) {
+      resultsArray.push(profile)
+      console.log(resultsArray)
+    }
+  }
+  res.json(resultsArray)
+})
+
+
+
+
+
+
+
 
 module.exports = router
