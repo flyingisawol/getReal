@@ -14,7 +14,6 @@ const Search = () => {
       method: "POST",
     })
     const data = await res.json()
-    console.log(data)
     setResults(data)
   }
 
