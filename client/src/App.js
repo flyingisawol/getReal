@@ -32,8 +32,8 @@ function App() {
     }
     getLoggedInUser()
   }, [])
-
-  return (
+  
+  return !user ?  <Login setUser={setUser} /> : (
     <div className="App">
       {user && <Link to="/getreal">Home</Link>}
       <Header user={user} setUser={setUser} profiles={profiles} />
@@ -62,7 +62,7 @@ function App() {
         <Route path="/getreal/showall" element={<ShowAll />} />
       </Routes>
     </div>
-  )
+    )
 }
 
 export default App
