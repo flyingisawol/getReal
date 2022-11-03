@@ -18,7 +18,7 @@ const Login = ({ setUser }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await fetch("/login", {
+    const res = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Login = ({ setUser }) => {
     } else if (res.status === 200) {
       setError(null)
       setUser(data)
-      navigate("/api/getreal")
+      navigate("/getreal")
     }
 
     setFields(initialState)

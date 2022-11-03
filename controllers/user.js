@@ -105,7 +105,7 @@ router.get(
 )
 
 //DATA
-router.get("/data/:id", async (req, res) => {
+router.get("/api/data/:id", async (req, res) => {
   // console.log(req.params.id)
   const loggedInUser = await Profile.findOne({
     creator: mongoose.Types.ObjectId(req.params.id),
@@ -114,7 +114,7 @@ router.get("/data/:id", async (req, res) => {
 })
 
 //MATCHES
-router.put("/match", async (req, res) => {
+router.put("/api/match", async (req, res) => {
   const findProfile = await Profile.findOne({ creator: req.user.id }) //finding logged in user
   findProfile.watchList.unshift(req.body.id) //add matched profile ids
   await findProfile.save()
@@ -125,7 +125,7 @@ router.put("/match", async (req, res) => {
 
 //DATA-PERSONALITY
 
-router.post("/personality", async (req, res) => {
+router.post("/api/personality", async (req, res) => {
   const findProfile = await Profile.findOne({ creator: req.user.id })
   findProfile.personality.push(...req.body)
   await findProfile.save()

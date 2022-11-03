@@ -72,14 +72,14 @@ const Questionnaire = () => {
 
 
     const handleSubmit = async () => {
-    await fetch("/personality", {
+    await fetch("/api/personality", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
           },
         body: JSON.stringify(answers),
         })
-        navigate("/api/getreal")
+        navigate("/getreal")
     }
 
     return (

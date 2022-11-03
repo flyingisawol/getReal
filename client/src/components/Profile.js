@@ -6,7 +6,7 @@ const Profile = ({profile}) => {
 
     return (
       <div className='posts'>
-        <Link to={`/api/getreal/${profile._id}`}>
+        <Link to={`/getreal/${profile._id}`}>
           <h3>{profile.name}</h3>
           <img src={profile.profileImg} alt={profile.name} />
         </Link>

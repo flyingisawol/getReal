@@ -16,7 +16,7 @@ const UserProfile = () => {
   }, [])
 
   const handleMatch = async () => {
-    const res = await fetch("/match", {
+    const res = await fetch("/api/match", {
       method: "PUT",
       body: JSON.stringify({ id }),
       headers: { "Content-Type": "application/json" },

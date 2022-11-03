@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 
 import {Link} from 'react-router-dom'
-=======
 
 
 const ShowAll = () => {
@@ -21,7 +20,7 @@ const ShowAll = () => {
         <>
             {p && p.map((profile) => 
                 <div className='show-all'>
-                    <Link to={`/api/getreal/${profile._id}`} >
+                    <Link to={`/getreal/${profile._id}`} >
                         <h1>{profile.name}</h1>
                         <img src={profile.profileImg} alt={profile.name} />
                     </Link>
