@@ -14,7 +14,7 @@ const CreateProfile = () => {
     //recieves incoming data from create route
     const data = await res.json()
     // setPosts([ data, ...posts ])
-    // navigate('/getreal/personality')
+    navigate('/getreal/questionnaire')
   }
 
   return (

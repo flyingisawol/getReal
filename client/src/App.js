@@ -10,6 +10,7 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import CreateProfile from "./components/CreateProfile"
 import SearchResults from "./components/SearchResults"
+import Questionnaire from "./components/Questionnaire"
 
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
@@ -57,6 +58,7 @@ function App() {
       <Header user={user} setUser={setUser} profiles={profiles} />
       <Routes>
         <Route path="/api/getreal/createprofile" element={<CreateProfile />} />
+        <Route path="/getreal/questionnaire" element={<Questionnaire />} />
         <Route path="/api/getreal" element={<HomeFeed profiles={profiles} />} />
         <Route path="/api/getreal/profile" element={<Profile />} />
         <Route
