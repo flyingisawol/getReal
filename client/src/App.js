@@ -16,6 +16,7 @@ import Questionnaire from "./components/Questionnaire"
 import Header from "./components/Header"
 import EditProfile from "./components/EditProfile"
 
+
 function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState(null)
@@ -33,7 +34,7 @@ function App() {
     getLoggedInUser()
   }, [])
   
-  return !user ?  <Login setUser={setUser} /> : (
+  return !user ? <><Login setUser={setUser} /> <Register /> </>: (
     <div className="App">
       {user && <Link to="/getreal">Home</Link>}
       <Header user={user} setUser={setUser} profiles={profiles} />
@@ -58,7 +59,7 @@ function App() {
           path="/login"
           element={<Login setUser={setUser} />}
         />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/getreal/showall" element={<ShowAll />} />
       </Routes>
     </div>

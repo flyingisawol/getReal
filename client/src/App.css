@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+.questionnaire {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: white;
+  font-family: 'Baloo 2', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.answer-section {
+  background-color: rgb(133, 167, 241);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.answer-btns {
+  margin: 10px 50px 50px 100px;
+  justify-content: center;
+  flex-wrap: row;
+  gap: 20px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  font-family: 'Baloo 2', cursive;
+}
+
+.questionnaire.card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  height: 80vh;
 }

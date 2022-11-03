@@ -21,11 +21,11 @@ router.post("/api/getreal/register", async (req, res) => {
   const { username, password } = req.body
   try {
     const user = await User.register(new User({ username: username }), password)
-    const userProfile = await Profile.create({ creator: user })
     req.login(user, () => {
       const { username, id } = user
       res.json({ username, id })
     })
+    const userProfile = await Profile.create({ creator: user }) 
   } catch (error) {
     console.log(error)
   }

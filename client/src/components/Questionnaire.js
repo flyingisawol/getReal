@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import '../App.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Button } from 'react-bootstrap'
+
 
 const Questionnaire = () => {
     const navigate = useNavigate()
@@ -79,15 +83,15 @@ const Questionnaire = () => {
     }
 
     return (
-        <div className="questionnaire">
+        <div className="questionnaire card">
             <div className="finishedQuiz">
-                { finished ? <button onClick={handleSubmit}>"You're all done, welcome... Click to continue"</button> :
+                { finished ? <Button onClick={handleSubmit} id="finish-questionnaire" >"You're all done, welcome... Click to continue"</Button> :
                     <div className='question-section'>  
                         <div className='question-text'>{questions[questionIndex].questionText}
                     </div>
                     <div className='answer-section'>
                         {questions[questionIndex].answerOptions.map((answerOption) => (
-                            <button onClick={handleAnswerButtonClick} value={answerOption.answerText}>{answerOption.answerText}</button>
+                            <Button onClick={handleAnswerButtonClick} value={answerOption.answerText} className="answer-btns">{answerOption.answerText} </Button>
                             ))
                         }
                     </div> 

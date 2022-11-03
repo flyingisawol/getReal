@@ -25,7 +25,7 @@ router.get('/api/getreal', async (req, res) => {
   const loggedInProfile = await Profile.findOne({creator: req.user.id})
   const loggedInLocation = loggedInProfile.location.toLowerCase()
   const allProfiles = await Profile.find()
-  const sameLocation = allProfiles.filter((profile) => {
+  const sameLocation = allProfiles.filter((profile) => { 
     return profile.location.toLowerCase() === loggedInLocation
   })
   res.json(sameLocation)

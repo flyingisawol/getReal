@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import LogoutButton from "./LogoutButton"
 import ProfileLink from "./ProfileLink"
+import '../App.css'
 
 const Header = ({ user, setUser }) => {
   return (
-    <nav>
+    <nav className="header">
       {/* <ProfileLink user={user}/> */}
       {user && <Link to="/getreal/search">Search</Link>}
       {user && <Link to="/getreal/edit">edit profile</Link>}

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const initialState = { username: "", password: "" }
 
@@ -38,6 +38,7 @@ const Login = ({ setUser }) => {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       {error && <p>{error.msg}</p>}
       <label htmlFor="login-username">Username</label>
@@ -59,6 +60,8 @@ const Login = ({ setUser }) => {
       />
       <input type="submit" value="Login" />
     </form>
+      <button><Link to="/register">Register</Link></button>
+    </>
   )
 }
 
