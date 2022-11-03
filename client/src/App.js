@@ -33,9 +33,11 @@ function App() {
     }
     getLoggedInUser()
   }, [])
-
-  return (
+  
+  return !user ?  <Login setUser={setUser} /> : (
     <div className="App">
+      {user && <Link to="/getreal">Home</Link>}
+      <Header user={user} setUser={setUser} profiles={profiles} />
       <Routes>
         <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />
@@ -62,7 +64,7 @@ function App() {
       </Routes>
       <Nav user={user} setUser={setUser} profiles={profiles} />
     </div>
-  )
+    )
 }
 
 export default App
