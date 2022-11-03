@@ -19,7 +19,7 @@ const UserProfile = () => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Hold up!</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">Confirm</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <h4>Single and ready to mingle ? 😉</h4>
@@ -56,7 +56,6 @@ const UserProfile = () => {
   }
   return (
     <div>
-      <h1>show page</h1>
       {!profile ? (
         <h1>Loading</h1>
       ) : (
