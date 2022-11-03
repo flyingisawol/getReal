@@ -52,6 +52,7 @@ const EditProfile = ({ user }) => {
     const res = await fetch('/api/getreal/delete', { method: 'DELETE' })
     const data = await res.json()
     console.log(data)
+    navigate('/')
   }
 
   return (

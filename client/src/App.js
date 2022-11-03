@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     const getLoggedInUser = async () => {
-      const res = await fetch("/loggedin-user")
+      const res = await fetch("/api/loggedin-user")
       const data = await res.json()
       if (res.status === 200) {
         setUser(data)
@@ -45,31 +45,31 @@ function App() {
   
   return (
     <div className="App">
-      <Link to="/api/getreal">go home</Link>
+      <Link to="/getreal">go home</Link>
       <Header user={user} setUser={setUser} profiles={profiles} />
       <Routes>
-        <Route path="/api/getreal/createprofile" element={<CreateProfile />} />
+        <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />
-        <Route path="/api/getreal" element={<HomeFeed profiles={profiles} />} />
-        <Route path="/api/getreal/profile" element={<Profile />} />
+        <Route path="/getreal" element={<HomeFeed profiles={profiles} />} />
+        <Route path="/getreal/profile" element={<Profile />} />
         <Route
-          path="/api/getreal/edit"
+          path="/getreal/edit"
           element={<EditProfile user={user} />}
         />
-        <Route path="/api/getreal/watchlist" element={<WatchList profiles={profiles} />} />
+        <Route path="/getreal/watchlist" element={<WatchList profiles={profiles} />} />
         <Route
-          path="/api/getreal/search"
+          path="/getreal/search"
           element={<Search query={query} setQuery={setQuery} />}
         />
-        <Route path="/api/getreal/searchresults" element={<SearchResults />} />
-        <Route path="/api/getreal/:id" element={<UserProfile />} />
-        <Route path="/api/getreal/user-profile" element={<UserProfile />} />
+        <Route path="/getreal/searchresults" element={<SearchResults />} />
+        <Route path="/getreal/:id" element={<UserProfile />} />
+        <Route path="/getreal/user-profile" element={<UserProfile />} />
         <Route
-          path="/api/getreal/login"
+          path="/getreal/login"
           element={<Login setUser={setUser} />}
         />
-        <Route path="/api/getreal/register" element={<Register />} />
-        <Route path="/api/getreal/showall" element={<ShowAll />} />
+        <Route path="/getreal/register" element={<Register />} />
+        <Route path="/getreal/showall" element={<ShowAll />} />
       </Routes>
     </div>
   )

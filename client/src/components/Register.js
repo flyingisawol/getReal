@@ -22,7 +22,7 @@ const Register = () => {
           body: JSON.stringify(data)
         }
         ) 
-      navigate("/api/getreal/createprofile");
+      navigate("/getreal/createprofile");
     } catch (error) {
       console.log(error);
     }
