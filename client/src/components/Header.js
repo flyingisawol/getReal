@@ -6,16 +6,12 @@ const Header = ({ user, setUser, profiles }) => {
   return (
     <nav>
       {/* <ProfileLink user={user}/> */}
+      {user && <Link to="/getreal/search">Search</Link>}
+      {user && <Link to="/getreal/edit">edit profile</Link>}
+      {user && <Link to="/getreal/watchlist">Watchlist</Link>}
+      {user ? (<LogoutButton setUser={setUser} />) : (<Link to="/login">Login</Link>)}
       <br />
-      <Link to="/getreal/search">Search</Link>
-      <br />
-      <Link to="/getreal/edit">edit profile</Link>
-      <br />
-      <Link to="/getreal/watchlist">Watchlist</Link>
-      <br />
-      {user ? (<LogoutButton setUser={setUser} />) : (<Link to="/getreal/login">Login</Link>)}
-      <br />
-      {user ? <p>Logged in as {user.username}</p> : (<Link to="/getreal/register">Register</Link>)}
+      {user ? <p>Logged in as {user.username}</p> : (<Link to="/register">Register</Link>)}
 
     </nav>
   )

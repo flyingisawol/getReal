@@ -16,8 +16,7 @@ const authenticate = (req, res, next) => {
   auth(req, res, next)
 }
 
-// register
-
+//REGISTER
 router.post("/api/getreal/register", async (req, res) => {
   const { username, password } = req.body
   try {
@@ -32,14 +31,14 @@ router.post("/api/getreal/register", async (req, res) => {
   }
 })
 
-// login
-
+//LOGIN
 router.post("/api/login", authenticate, (req, res) => {
   //console.log("logged in", req.user)
   const { id, username } = req.user
   res.json({ id, username })
 })
 
+//LOGOUT
 router.post("/api/logout", (req, res) => {
   req.logout(() => {
     res.json({
@@ -48,6 +47,7 @@ router.post("/api/logout", (req, res) => {
   })
 })
 
+//LOGIN CONFIRMATION
 router.get("/api/loggedin-user", (req, res) => {
   if (req.user) {
     const { id, username } = req.user

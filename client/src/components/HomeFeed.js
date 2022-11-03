@@ -3,12 +3,12 @@ import Profile from './Profile'
 
 
 
-const HomeFeed = ({profiles}) => {
+const HomeFeed = ({ profiles, user }) => {
 
     return (
       <div className="home-page">
-        <h2>Homepage</h2>
-        <Link to='/getreal/showall'>Show all users</Link>
+        <h2>getREAL</h2>
+        {user && <Link to='/getreal/showall'>Show all users</Link>}
         {profiles.map((profile) => <Profile profile={profile} />)}
       </div>
     )
