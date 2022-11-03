@@ -2,6 +2,38 @@
   text-align: center;
 }
 
+
+
+.edit_page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.form.edit_form.rounded {
+  min-height: 100%;
+}
+
+#delete-profile {
+  position: absolute;
+  bottom: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
