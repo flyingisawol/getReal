@@ -36,8 +36,8 @@ function App() {
   
   return !user ?  <Login setUser={setUser} /> : (
     <div className="App">
-      {user && <Link to="/getreal">Home</Link>}
-      <Header user={user} setUser={setUser} profiles={profiles} />
+      
+      {/* {user && <Link to="/getreal">Home</Link>} */}
       <Routes>
         <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { useNavigate } from 'react-router-dom'
 
-
 const EditProfile = ({ user }) => {
   const navigate = useNavigate()
 
@@ -51,7 +50,6 @@ const EditProfile = ({ user }) => {
   const handleDelete = async (event) => {
     const res = await fetch('/api/getreal/delete', { method: 'DELETE' })
     const data = await res.json()
-    console.log(data)
     navigate("/login")
   }
 

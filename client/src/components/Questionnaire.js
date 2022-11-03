@@ -58,7 +58,6 @@ const Questionnaire = () => {
         setAnswers([...answers, event.target.value])
         const nextQuestion = questionIndex + 1
         if (nextQuestion < questions.length){
-            console.log(nextQuestion)
             console.log('current question', questionIndex, questions.length)
             setQuestionIndex(nextQuestion)
         } else {

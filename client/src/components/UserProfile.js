@@ -51,7 +51,6 @@ const UserProfile = () => {
       headers: { "Content-Type": "application/json" },
     })
     const data = await res.json()
-    console.log("DATA FROM MATCHES ROUTER", data)
     navigate(-1)
   }
   return (
@@ -61,7 +60,6 @@ const UserProfile = () => {
       ) : (
         <>
           <h1>{profile.name}</h1>
-          {/* <button onClick={handleMatch}>Match</button> */}
           <img src={profile.profileImg} alt={profile.name} />
           <Button variant="primary" onClick={() => setModalShow(true)}>
             Match

@@ -33,7 +33,6 @@ const Login = ({ setUser }) => {
       setUser(data)
       navigate("/getreal")
     }
-
     setFields(initialState)
   }
 
