@@ -1,13 +1,8 @@
 import WatchListProfile from './WatchListProfile'
 import {useState, useEffect} from 'react'
 
-
-
-const WatchList = ({profiles}) => {
-
+const WatchList = () => {
   const [loggedInProfile, setLoggedInProfile] = useState(null)
-
-  //console.log('logged in user', loggedInProfile)
 
   useEffect(() => {
     console.log('use effect was called')
@@ -25,19 +20,14 @@ const WatchList = ({profiles}) => {
     setLoggedInProfile(updateRemove)
   }
  
-
     return (
       <>
       <h1>Watchlist</h1>
-
-
       {loggedInProfile ?
         loggedInProfile.watchList.map((profile) => <WatchListProfile profile={profile} loggedInProfile={loggedInProfile} removeFromWatchlist={removeFromWatchlist} /> )
         : 
         null
       }
-
-
       </>
     )
   }

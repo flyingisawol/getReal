@@ -1,8 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 
-
-const Profile = ({profile}) => {
+const Profile = ({ profile }) => {
 
     return (
       <div className='posts'>
@@ -12,10 +11,8 @@ const Profile = ({profile}) => {
         </Link>
         <p>Age: {profile.age}</p>
         <p>Location: {profile.location}</p>
-
       </div>
     )
-    
   }
 
 export default Profile

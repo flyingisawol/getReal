@@ -22,12 +22,10 @@ router.get('/api/getreal', async (req, res) => {
   const loggedInProfile = await Profile.findOne({creator: req.user.id})
   const loggedInLocation = loggedInProfile.location.toLowerCase()
   const allProfiles = await Profile.find()
-
   const sameLocation = allProfiles.filter((profile) => {
     return profile.location.toLowerCase() === loggedInLocation
   })
   res.json(sameLocation)
-
 })
 
 //CREATE
@@ -68,14 +66,11 @@ router.delete("/api/getreal/delete", async (req, res) => {
   res.json(deletedUser)
 })
 
-
-
 //WATCHLIST
 router.get('/api/getreal/watchlist', async (req, res) => {
   const userProfile = await Profile.findOne({creator: req.user.id}).populate('watchList')
   res.json(userProfile)
 })
-
 
 //REMOVE FROM WATCHLIST
 router.put('/api/getreal/removewatchlist', async (req, res) => {
@@ -88,9 +83,6 @@ router.put('/api/getreal/removewatchlist', async (req, res) => {
   await loggedInProfile.save()
   res.json(loggedInProfile)
 })
-
-
-
 
 //SHOW
 router.get(
@@ -106,25 +98,20 @@ router.get(
 
 //DATA
 router.get("/api/data/:id", async (req, res) => {
-  // console.log(req.params.id)
   const loggedInUser = await Profile.findOne({
     creator: mongoose.Types.ObjectId(req.params.id),
   })
-  // console.log("LOGGEDINUSER", loggedInUser)
 })
 
 //MATCHES
 router.put("/api/match", async (req, res) => {
-  const findProfile = await Profile.findOne({ creator: req.user.id }) //finding logged in user
-  findProfile.watchList.unshift(req.body.id) //add matched profile ids
+  const findProfile = await Profile.findOne({ creator: req.user.id })
+  findProfile.watchList.unshift(req.body.id)
   await findProfile.save()
-  res.json(findProfile)  //send logged in user profile with updated watchlist 
-
-  // await findProfile.save()
+  res.json(findProfile)
 })
 
 //DATA-PERSONALITY
-
 router.post("/api/personality", async (req, res) => {
   const findProfile = await Profile.findOne({ creator: req.user.id })
   findProfile.personality.push(...req.body)
@@ -147,12 +134,5 @@ router.post('/api/getreal/search', async (req, res) => {
   }
   res.json(resultsArray)
 })
-
-
-
-
-
-
-
 
 module.exports = router

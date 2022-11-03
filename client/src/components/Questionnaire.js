@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
 const Questionnaire = () => {
     const navigate = useNavigate()
     const questions = [
@@ -52,9 +51,7 @@ const Questionnaire = () => {
         }
     ]
     const [questionIndex, setQuestionIndex] = useState(0)
-
     const [finished, setFinished] = useState(false)
-
     const [answers, setAnswers] = useState([])
 
     const handleAnswerButtonClick = (event) => {            
@@ -69,7 +66,6 @@ const Questionnaire = () => {
         }
         setQuestionIndex(nextQuestion)
     }
-
 
     const handleSubmit = async () => {
     await fetch("/api/personality", {
@@ -99,7 +95,6 @@ const Questionnaire = () => {
                 }
             </div>
         </div>
-      
     )
 }
 
