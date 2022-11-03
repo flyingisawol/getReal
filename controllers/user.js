@@ -33,13 +33,10 @@ router.post(
   "/api/getreal/create",
   upload.single("profileImg"),
   async (req, res) => {
-    console.log("REQ BODY", req.body)
-    console.log(req.user.id)
     let userInfo = {
       ...req.body,
       profileImg: req.file?.path,
     }
-    console.log("USERINFO", userInfo)
     const findProfile = await Profile.findOne({ creator: req.user.id })
     const updateProfile = await findProfile.update(userInfo)
     res.json(updateProfile)
@@ -51,8 +48,11 @@ router.put(
   "/api/getreal/edit",
   upload.single("profileImg"),
   async (req, res) => {
-    let user = await Profile.findOneAndUpdate({ creator: req.user.id }, req.body, { new: true })
-    console.log(user)
+    let userInfo = {
+      ...req.body,
+      profileImg: req.file?.path,
+    } 
+    let user = await Profile.findOneAndUpdate({ creator: req.user.id }, userInfo, { new: true })
     res.json(user)
   }
 )
@@ -60,7 +60,6 @@ router.put(
 //DELETE
 router.delete("/api/getreal/delete", async (req, res) => {
   let user = await Profile.findOne({ creator: req.user.id })
-  console.log(user)
   await Profile.findOneAndDelete({ creator: req.user.id })
   let deletedUser = await User.findByIdAndDelete(req.user.id)
   res.json(deletedUser)
@@ -122,14 +121,12 @@ router.post("/api/personality", async (req, res) => {
 //SEARCH
 router.post('/api/getreal/search', async (req, res) => {
   const {searchTerm} = req.query 
-  console.log(typeof searchTerm)
   const profiles = await Profile.find()
   let resultsArray = []
 
   for (profile of profiles) {
     if (profile.location.toLowerCase() === searchTerm.toLowerCase()) {
       resultsArray.push(profile)
-      console.log(resultsArray)
     }
   }
   res.json(resultsArray)

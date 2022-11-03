@@ -15,6 +15,7 @@ import ShowAll from './components/ShowAll'
 import Questionnaire from "./components/Questionnaire"
 import Nav from "./components/Nav"
 import EditProfile from "./components/EditProfile"
+import "./App.css"
 
 function App() {
   const navigate = useNavigate()

@@ -45,7 +45,7 @@ const EditProfile = ({ user }) => {
     })
     const data = await res.json()
     console.log(data)
-    navigate(-1)
+    navigate("/getreal")
   }
   
   const handleDelete = async (event) => {

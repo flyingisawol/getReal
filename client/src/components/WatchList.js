@@ -1,23 +1,19 @@
-import WatchListProfile from './WatchListProfile'
 import {useState, useEffect} from 'react'
+import WatchListProfile from './WatchListProfile'
 
 const WatchList = () => {
   const [loggedInProfile, setLoggedInProfile] = useState(null)
 
   useEffect(() => {
-    console.log('use effect was called')
       const getProfile = async () => {
           const res = await fetch('/api/getreal/watchlist')
           const data = await res.json()
-          console.log(data)
           setLoggedInProfile(data)
       }
       getProfile()
   }, [])
 
   const removeFromWatchlist = (updateRemove) => {
-    console.log('remove form watch list called')
-    setLoggedInProfile(updateRemove)
   }
  
     return (

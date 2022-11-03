@@ -4,8 +4,9 @@ import ProfileLink from "./ProfileLink"
 
 const Nav = ({ user, setUser }) => {
   return (
+    <div className="navFooter">
     <nav>
-      {/* <ProfileLink user={user}/> */}
+      <ProfileLink user={user}/>
       {user && <Link to="/getreal">Home</Link>}
       {user && <Link to="/getreal/search">Search</Link>}
       {user && <Link to="/getreal/edit">edit profile</Link>}
@@ -14,6 +15,7 @@ const Nav = ({ user, setUser }) => {
       <br />
       {user ? <p>Logged in as {user.username}</p> : (<Link to="/register">Register</Link>)}
     </nav>
+    </div>
   )
 }
 
