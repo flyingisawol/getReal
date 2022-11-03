@@ -56,7 +56,7 @@ function App() {
           path="/getreal/edit"
           element={<EditProfile user={user} />}
         />
-        <Route path="/getreal/watchlist" element={<WatchList profiles={profiles} />} />
+        <Route path="/getreal/watchlist" element={<WatchList/>} />
         <Route
           path="/getreal/search"
           element={<Search query={query} setQuery={setQuery} />}

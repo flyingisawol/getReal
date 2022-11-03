@@ -11,7 +11,6 @@ const Profile = ({ profile }) => {
         </Link>
         <p>Age: {profile.age}</p>
         <p>Location: {profile.location}</p>
-
       </div>
     )
   }
