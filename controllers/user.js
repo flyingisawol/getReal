@@ -11,6 +11,9 @@ const upload = require("../middlewares/upload")
 const { remove } = require("../models/profile")
 // const searchController = require('./search')
 
+
+
+
 //SHOW ALL
 router.get("/api/getreal/showall", async (req, res) => {
   const users = await Profile.find()
@@ -27,6 +30,9 @@ router.get('/api/getreal', async (req, res) => {
   })
   res.json(sameLocation)
 })
+
+router.use(ensureLogin.ensureLoggedIn())
+
 
 //CREATE
 router.post(
