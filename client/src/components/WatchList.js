@@ -7,11 +7,14 @@ const WatchList = ({profiles}) => {
 
   const [loggedInProfile, setLoggedInProfile] = useState(null)
 
+  //console.log('logged in user', loggedInProfile)
+
   useEffect(() => {
     console.log('use effect was called')
       const getProfile = async () => {
           const res = await fetch('/api/getreal/watchlist')
           const data = await res.json()
+          console.log(data)
           setLoggedInProfile(data)
       }
       getProfile()
@@ -29,10 +32,12 @@ const WatchList = ({profiles}) => {
 
 
       {loggedInProfile ?
-        profiles.map((profile) => <WatchListProfile profile={profile} loggedInProfile={loggedInProfile} removeFromWatchlist={removeFromWatchlist} /> )
+        loggedInProfile.watchList.map((profile) => <WatchListProfile profile={profile} loggedInProfile={loggedInProfile} removeFromWatchlist={removeFromWatchlist} /> )
         : 
         null
       }
+
+
       </>
     )
   }

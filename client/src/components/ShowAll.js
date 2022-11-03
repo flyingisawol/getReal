@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 
+import {Link} from 'react-router-dom'
+=======
+
+
 const ShowAll = () => {
     
     const [p, setP] = useState(null)
@@ -17,8 +21,14 @@ const ShowAll = () => {
         <>
             {p && p.map((profile) => 
                 <div className='show-all'>
+                    <Link to={`/api/getreal/${profile._id}`} >
+                        <h1>{profile.name}</h1>
+                        <img src={profile.profileImg} alt={profile.name} />
+                    </Link>
+
                     <h1>{profile.name}</h1>
                     <img src={profile.profileImg} alt={profile.name} />
+
                     <p>Age: {profile.age}</p>
                     <p>Location: {profile.location}</p>
                 </div>)}
