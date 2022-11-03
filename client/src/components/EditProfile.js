@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
 import { useNavigate } from 'react-router-dom'
 
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import {Form} from 'react-bootstrap'
 
 const EditProfile = ({ user }) => {
   const navigate = useNavigate()
@@ -57,7 +58,7 @@ const EditProfile = ({ user }) => {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    <Form className='edit_form rounded' onSubmit={handleSubmit}>
       <input name="name" type="text" required placeholder="full-name" />
       <br />
       <label htmlFor="profileImg">Upload profile pic</label>
@@ -82,7 +83,7 @@ const EditProfile = ({ user }) => {
       <input name="location" type="text" required placeholder="location" />
       <br />
       <input type="submit" value="Save" />
-    </form>
+    </Form>
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Delete
       </Button>
