@@ -1,8 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 
-
-const Profile = ({profile}) => {
+const Profile = ({ profile }) => {
 
     return (
       <div className='posts'>
@@ -15,7 +14,6 @@ const Profile = ({profile}) => {
 
       </div>
     )
-    
   }
 
 export default Profile
