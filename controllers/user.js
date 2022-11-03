@@ -54,6 +54,7 @@ router.put(
   upload.single("profileImg"),
   async (req, res) => {
     let user = await Profile.findOneAndUpdate({ creator: req.user.id }, req.body, { new: true })
+    console.log(user)
     res.json(user)
   }
 )

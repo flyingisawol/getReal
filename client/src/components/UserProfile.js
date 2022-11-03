@@ -10,7 +10,6 @@ const UserProfile = () => {
     const getProfile = async () => {
       const res = await fetch(`/api/getreal/${id}`)
       const data = await res.json()
-      // console.log(data)
       setProfile(data)
     }
     getProfile()

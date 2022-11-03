@@ -41,17 +41,7 @@ function App() {
     }
     getLoggedInUser()
   }, [])
-
-  // useEffect(() => {
-  //   const getLoggedInID = async () => {
-  //     const res = await fetch('/logggedin-user')
-  //     const loggedInUser = await res.json()
-  //     setLoggedInID(loggedInUser.id)
-  //   }
-  //   getLoggedInID()
-  //   console.log(loggedInID)
-  // }, [])
-
+  
   return (
     <div className="App">
       <Link to="/api/getreal">go home</Link>
