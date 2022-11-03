@@ -75,7 +75,7 @@ const Questionnaire = () => {
           },
         body: JSON.stringify(answers),
         })
-        navigate("/getreal")
+        navigate("/login")
     }
 
     return (

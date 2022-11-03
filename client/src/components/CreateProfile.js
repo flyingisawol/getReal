@@ -24,7 +24,7 @@ const CreateProfile = () => {
       <label htmlFor="profileImg">Upload profile pic</label>
       <input name="profileImg" required id="profileImg" type="file" />
       <br />
-      <input name="age" required type="number" placeholder="age" />
+      <input name="age" required type="number" min="18" placeholder="age" />
       <br />
       <label htmlFor="gender">Gender</label>
       <select name="gender" id="gender">
