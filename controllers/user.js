@@ -123,6 +123,15 @@ router.put("/match", async (req, res) => {
   // await findProfile.save()
 })
 
+//DATA-PERSONALITY
+
+router.post("/personality", async (req, res) => {
+  const findProfile = await Profile.findOne({ creator: req.user.id })
+  findProfile.personality.push(...req.body)
+  await findProfile.save()
+  res.json(findProfile)
+})
+
 //SEARCH
 router.post('/api/getreal/search', async (req, res) => {
   const {searchTerm} = req.query 
