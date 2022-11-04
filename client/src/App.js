@@ -59,7 +59,6 @@ function App() {
         <Route path="/getreal/user-profile" element={<UserProfile />} />
         <Route path="/getreal/showall" element={<ShowAll />} />
       </Route>
-
       </Routes>
         <Nav user={user} setUser={setUser} profiles={profiles} />
     </div>

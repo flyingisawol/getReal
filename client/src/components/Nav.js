@@ -18,11 +18,6 @@ const Nav = ({ user, setUser }) => {
             <Link to="/login"></Link>
             )}
         <br />
-        {user ? (
-          null
-          ) : (
-            <Link to="/register">Register</Link>
-            )}
             </div>
       </nav>
     </div>

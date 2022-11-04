@@ -23,6 +23,7 @@ const sessionStore = new MongoDBStore({
 })
 
 app.use(express.static("public"))
+app.use(express.static(__dirname + '/client/build'))
 app.use(express.urlencoded({ extended: true }))
 app.use(
   session({
