@@ -59,36 +59,10 @@ const EditProfile = ({ user }) => {
   return (
     <>
     <div className='content-body'>
-    <form onSubmit={handleSubmit}>
-      <input name="name" type="text" required placeholder="full-name" />
-      <br />
-      <label htmlFor="profileImg">Upload profile pic</label>
-      <input name="profileImg" required id="profileImg" type="file" />
-      <br />
-      <input name="age" required type="number" min="18" placeholder="age" />
-      <br />
-      <label htmlFor="gender">Gender</label>
-      <select name="gender" id="gender">
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="other">other</option>
-      </select>
-      <br />
-      <label htmlFor="preferences">Sexual preference</label>
-      <select name="preferences" id="preferences">
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="other">other</option>
-      </select>
-      <br />
-      <input name="location" type="text" required placeholder="location" />
-      <br />
-      <input type="submit" value="Save" />
-    </form>
-      <Button variant="primary" onClick={() => setModalShow(true)} />
     <div className='edit_page'>
       <Form className='edit_form rounded' onSubmit={handleSubmit}>
         <Form.Group>
+      <h2>Edit Profile</h2>
           <Form.Control name="name" type="text" required placeholder="full-name" />
           <br />
           <label htmlFor="profileImg">Upload profile pic</label>
@@ -113,13 +87,13 @@ const EditProfile = ({ user }) => {
           <Form.Control name="location" type="text" required placeholder="location" />
           <br />
           {/* <input type="submit" value="Save" /> */}
-          <Button as='input' type='submit' value='Save' />
+          <Button id="saveBtn" as='input' type='submit' value='Save' />
         </Form.Group>
       </Form>
-
       <Button id='delete-profile'variant="danger" onClick={() => setModalShow(true)}>
         Delete
       </Button>
+
 
       <MyVerticallyCenteredModal
         show={modalShow}

@@ -13,7 +13,9 @@ const WatchList = () => {
     getProfile()
   }, [])
 
-  const removeFromWatchlist = (updateRemove) => {}
+  const removeFromWatchlist = (updateRemove) => {
+    setLoggedInProfile(updateRemove)
+  }
 
   return (
     <>

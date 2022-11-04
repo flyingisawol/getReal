@@ -43,6 +43,10 @@ passport.deserializeUser(User.deserializeUser())
 app.use(authController)
 app.use(userController)
 
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
+
 mongoose.connect(dbURL, () => {
   console.log("Connected to db")
 })

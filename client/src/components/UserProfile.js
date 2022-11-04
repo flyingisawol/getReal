@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal"
 import { useNavigate } from "react-router-dom"
+import { Card } from "react-bootstrap"
+
 
 const UserProfile = () => {
   const [profile, setProfile] = useState(null)
@@ -60,15 +62,33 @@ const UserProfile = () => {
       ) : (
         <>
         <div className="content-body">
-          <h1>{profile.name}</h1>
-          <img src={profile.profileImg} alt={profile.name} />
-          <Button variant="primary" onClick={() => setModalShow(true)}>
+          <Card className="card">
+            <Card.Body>
+          <div className="posts">
+          <Card.Img src={profile.profileImg} alt={profile.name} />
+          <div className="text-block1">
+          <Card.Title><h1>{profile.name}</h1></Card.Title>
+          <Card.Text><h1>{profile.age}</h1></Card.Text>
+          <h1>{profile.location}</h1>
+          </div>
+          </div>
+          <Button id="find" variant="primary" onClick={() => setModalShow(true)}>
             Match
           </Button>
           <MyVerticallyCenteredModal
             show={modalShow}
             onHide={() => setModalShow(false)}
-          />
+            />
+            <h3>A bit about me...</h3>
+            <ul className="personality-list">
+            <p> One of my favourite movies is {profile.personality[0]}</p>
+            <p> If I was a dog I would be a {profile.personality[1]}</p>
+            <p> On the weekend, I'd enjoy... {profile.personality[2]}</p>
+            <p> On long drives home i'll be listening to {profile.personality[3]}</p>
+            <p> My favourite takeout... {profile.personality[4]}</p>
+          </ul>
+            </Card.Body>
+          </Card>
           </div>
         </>
       )}

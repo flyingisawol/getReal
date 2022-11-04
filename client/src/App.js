@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, Outlet, Navigate } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
 import HomeFeed from "./components/HomeFeed"
@@ -16,6 +16,11 @@ import Questionnaire from "./components/Questionnaire"
 import Nav from "./components/Nav"
 import EditProfile from "./components/EditProfile"
 import "./App.css"
+import Header from "./components/Header"
+
+const PrivateRoutes = ({ isLoggedIn }) => {
+  return isLoggedIn ? <Outlet /> : <Navigate to="/login" />
+}
 
 function App() {
   const navigate = useNavigate()
@@ -34,35 +39,29 @@ function App() {
     getLoggedInUser()
   }, [])
   
-  return !user ?  <Login setUser={setUser} /> : (
+  return (
     <div className="App">
-      
-      {/* {user && <Link to="/getreal">Home</Link>} */}
-      <Routes>
+      <Header />
+      <Routes>  
+        <Route path="/login" element={<Login setUser={setUser} />} /> 
+        <Route path="/register" element={<Register setUser={setUser} />} />
+
+      <Route path="/" element={<PrivateRoutes isLoggedIn={!!user} />}>
         <Route path="/getreal/createprofile" element={<CreateProfile />} />
         <Route path="/getreal/questionnaire" element={<Questionnaire />} />
         <Route path="/getreal" element={<HomeFeed user={user}/>} />
         <Route path="/getreal/profile" element={<Profile />} />
-        <Route
-          path="/getreal/edit"
-          element={<EditProfile user={user} />}
-        />
+        <Route path="/getreal/edit" element={<EditProfile user={user} />} />
         <Route path="/getreal/watchlist" element={<WatchList/>} />
-        <Route
-          path="/getreal/search"
-          element={<Search query={query} setQuery={setQuery} />}
-        />
+        <Route path="/getreal/search" element={<Search query={query} setQuery={setQuery} />} />
         <Route path="/getreal/searchresults" element={<SearchResults />} />
         <Route path="/getreal/:id" element={<UserProfile />} />
         <Route path="/getreal/user-profile" element={<UserProfile />} />
-        <Route
-          path="/login"
-          element={<Login setUser={setUser} />}
-        />
-        <Route path="/register" element={<Register />} />
         <Route path="/getreal/showall" element={<ShowAll />} />
+      </Route>
+
       </Routes>
-      <Nav user={user} setUser={setUser} profiles={profiles} />
+        <Nav user={user} setUser={setUser} profiles={profiles} />
     </div>
     )
 }

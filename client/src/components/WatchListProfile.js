@@ -1,3 +1,6 @@
+import { Button } from 'react-bootstrap'
+import { Navigate } from 'react-router-dom'
+
 const WatchListProfile = ({
   profile,
   loggedInProfile,
@@ -22,10 +25,10 @@ const WatchListProfile = ({
     <>
     <div className='content-body'>
       <p>{profile.name}</p>
-      <button value={profile._id} onClick={handleRemoveWatchlist}>
-        remove from watchlist
-      </button>
       <img src={profile.profileImg} alt={profile.name} />
+      <Button value={profile._id} variant="danger" onClick={handleRemoveWatchlist}>
+        remove from watchlist
+      </Button>
     </div>
     </>
   )

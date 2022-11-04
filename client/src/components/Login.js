@@ -58,7 +58,9 @@ const Login = ({ setUser }) => {
         type="Password"
         placeholder="password"
       />
+      <div className="login">
       <input type="submit" value="Login" />
+      </div>
     </form>
     </div>
     </div>

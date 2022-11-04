@@ -1,10 +1,16 @@
 {
   "name": "getreal",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.9.1"
+  },  
   "description": "GA Project 3",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd client && npm i && npm run build"
   },
   "repository": {
     "type": "git",

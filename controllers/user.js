@@ -126,6 +126,9 @@ router.post('/api/getreal/search', async (req, res) => {
 
   for (profile of profiles) {
     if (profile.location.toLowerCase() === searchTerm.toLowerCase()) {
+      for (item of profile.personality) {
+        console.log(item)
+      }
       resultsArray.push(profile)
     }
   }

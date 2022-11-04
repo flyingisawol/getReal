@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Card } from 'react-bootstrap'
 
 const Questionnaire = () => {
     const navigate = useNavigate()
@@ -74,27 +77,27 @@ const Questionnaire = () => {
           },
         body: JSON.stringify(answers),
         })
-        navigate("/login")
+        navigate("/getreal")
     }
 
     return (
         <div className='content-body'>
-        <div className="questionnaire">
+        <Card>
             <div className="finishedQuiz">
-                { finished ? <button onClick={handleSubmit}>"You're all done, welcome... Click to continue"</button> :
+                { finished ? <Button onClick={handleSubmit} className="finish-questionnaire" variant="warning">"You're all done, welcome... Click to continue"</Button> :
                     <div className='question-section'>  
                         <div className='question-text'>{questions[questionIndex].questionText}
                     </div>
                     <div className='answer-section'>
                         {questions[questionIndex].answerOptions.map((answerOption) => (
-                            <button onClick={handleAnswerButtonClick} value={answerOption.answerText}>{answerOption.answerText}</button>
+                            <Button onClick={handleAnswerButtonClick} value={answerOption.answerText} variant="dark" className="answer-btns" >{answerOption.answerText}</Button>
                             ))
                         }
                     </div> 
                     </div>
                 }
             </div>
-        </div>
+        </Card>
         </div>
     )
 }
