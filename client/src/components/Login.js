@@ -39,7 +39,10 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="login-page">
-      <div className="form">
+      <div className="login-form">
+        <h4>Sign In</h4>
+        <p>Not Registered?
+      <Link to="/register" style={{ textDecoration: 'none' }}> Sign Up</Link></p>
       <form onSubmit={handleSubmit}>
       {error && <p>{error.msg}</p>}
       <input
@@ -59,10 +62,11 @@ const Login = ({ setUser }) => {
         type="Password"
         placeholder="password"
       />
-      <div className="login">
-      <input type="submit" value="Login" />
+      <div className="login-button">
+      <input type="submit" value="SIGN IN" />
       </div>
-      <Link to="/register">Register</Link>
+      <div className="register-button">
+      </div>
     </form>
     </div>
     </div>
