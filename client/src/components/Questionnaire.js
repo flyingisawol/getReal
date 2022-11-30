@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Card } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import "bootstrap/dist/css/bootstrap.min.css"
-import { Card } from 'react-bootstrap'
 
 const Questionnaire = () => {
     const navigate = useNavigate()
@@ -101,7 +98,6 @@ const Questionnaire = () => {
                 }
             </div>
         </Card>
-        </div>
         </div>
     )
 }
