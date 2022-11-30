@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"
 
 const Register = ({ setUser }) => {
+const Register = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -25,6 +26,7 @@ const Register = ({ setUser }) => {
         const userData = await res.json()
         setUser(userData)
         navigate("/getreal/createprofile")
+      navigate("/getreal/createprofile")
     } catch (error) {
     }
   };

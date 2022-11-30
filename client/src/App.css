@@ -5,7 +5,6 @@
   margin-top: 10px;
   padding: 5px;
   font-family: 'Baloo 2', cursive;
-
 }
 
 .edit_page {
@@ -24,6 +23,7 @@
   bottom: 150px;
   width: 93%;
 }
+
 
 #saveBtn {
   width: 100%;
@@ -67,7 +67,6 @@
 
 .login input {
   border: none;
-  
 }
 
 img {
@@ -152,6 +151,19 @@ img {
   font-family: 'Baloo 2';
 }
 
+.login-page {
+  min-height: 100vh;
+  background-image: url("../public/images/heart.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+}
+
 /* FOOTER */
 .navFooter {
   background-color: white;
@@ -165,6 +177,10 @@ img {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 0;
+  border-top: 2px solid grey;
+  min-height: 95px;
+  padding-top: 15px;
+  padding-left: 5px;
 }
 
 .icons {
@@ -176,7 +192,7 @@ img {
 }
 
 .material-icons {
-  
+
 }
 
 .logoutBtn button {
@@ -184,4 +200,8 @@ img {
   background: none !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+img {
+  width: 100%;
 }

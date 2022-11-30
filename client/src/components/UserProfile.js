@@ -73,6 +73,9 @@ const UserProfile = () => {
           </div>
           </div>
           <Button id="find" variant="primary" onClick={() => setModalShow(true)}>
+          <h1>{profile.name}</h1>
+          <img src={profile.profileImg} alt={profile.name} />
+          <Button variant="primary" onClick={() => setModalShow(true)}>
             Match
           </Button>
           <MyVerticallyCenteredModal
@@ -89,6 +92,7 @@ const UserProfile = () => {
           </ul>
             </Card.Body>
           </Card>
+          />
           </div>
         </>
       )}
