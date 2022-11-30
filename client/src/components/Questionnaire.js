@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Card } from 'react-bootstrap'
 
 const Questionnaire = () => {
     const navigate = useNavigate()
@@ -86,7 +89,7 @@ const Questionnaire = () => {
             <div className="finishedQuiz">
                 { finished ? <Button onClick={handleSubmit} className="finish-questionnaire" variant="warning">"You're all done, welcome... Click to continue"</Button> :
                     <div className='question-section'>  
-                        <div className='question-text'>{questions[questionIndex].questionText}
+                        <div className='question-text'>{questions[questionIndex].questionText}  
                     </div>
                     <div className='answer-section'>
                         {questions[questionIndex].answerOptions.map((answerOption) => (
@@ -98,6 +101,7 @@ const Questionnaire = () => {
                 }
             </div>
         </Card>
+        </div>
         </div>
     )
 }

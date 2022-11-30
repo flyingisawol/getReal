@@ -8,6 +8,13 @@ const WatchListProfile = ({
 }) => {
   console.log(profile, loggedInProfile)
 
+const WatchListProfile = ({
+  profile,
+  loggedInProfile,
+  removeFromWatchlist,
+}) => {
+  console.log(profile, loggedInProfile)
+
   const handleRemoveWatchlist = (event) => {
     const removeWatchlist = async () => {
       const res = await fetch("/api/getreal/removewatchlist", {
@@ -29,9 +36,13 @@ const WatchListProfile = ({
       <Button value={profile._id} variant="danger" onClick={handleRemoveWatchlist}>
         remove from watchlist
       </Button>
+      <button value={profile._id} onClick={handleRemoveWatchlist}>
+        remove from watchlist
+      </button>
+      <img src={profile.profileImg} alt={profile.name} />
     </div>
     </>
   )
 }
-
+}
 export default WatchListProfile
