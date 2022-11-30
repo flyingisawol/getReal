@@ -60,7 +60,7 @@ function App() {
         <Route path="/getreal/showall" element={<ShowAll />} />
       </Route>
       </Routes>
-        <Nav user={user} setUser={setUser} profiles={profiles} />
+        {user && <Nav user={user} setUser={setUser} profiles={profiles} />}
     </div>
     )
 }
