@@ -92,6 +92,7 @@ const UserProfile = () => {
           </ul>
             </Card.Body>
           </Card>
+          />
           </div>
         </>
       )}

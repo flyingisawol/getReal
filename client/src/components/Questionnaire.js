@@ -98,6 +98,7 @@ const Questionnaire = () => {
                     </div>
                 }
             </div>
+        </Card>
         </div>
         </Card>
         </div>
