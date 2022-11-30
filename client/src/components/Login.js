@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 const initialState = { username: "", password: "" }
 
@@ -58,7 +59,10 @@ const Login = ({ setUser }) => {
         type="Password"
         placeholder="password"
       />
+      <div className="login">
       <input type="submit" value="Login" />
+      </div>
+      <Link to="/register">Register</Link>
     </form>
     </div>
     </div>

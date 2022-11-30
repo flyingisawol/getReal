@@ -15,6 +15,9 @@ const Nav = ({ user, setUser }) => {
         {user ? (
           <LogoutButton setUser={setUser} />
           ) : (
+            <Link to="/login"></Link>
+            )}
+        <br />
             <Link to="/login">Login</Link>
             )}
         <br />

@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-top: 10px;
+  padding: 5px;
+  font-family: 'Baloo 2', cursive;
 }
 
 .edit_page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 10px;
 }
 
@@ -18,7 +20,21 @@
 
 #delete-profile {
   position: absolute;
-  bottom: 3px;
+  bottom: 150px;
+  width: 93%;
+}
+
+
+#saveBtn {
+  width: 100%;
+}
+
+#showAllBtn {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .posts {
@@ -38,6 +54,105 @@
 
 .login-page {
   min-height: 100vh;
+  background-image: url("../public/images/cold.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+}
+
+.login input {
+  border: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* QUESTIONNAIRE */
+.questionnaire {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: 'Baloo 2', cursive;
+}
+
+.answer-btns {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.question-text {
+  font-family: 'Baloo 2';
+  font-size: 29px;
+  padding: 20px;
+}
+
+.finish-questionnaire{
+  width: 100%;
+  height: 100vh;
+}
+
+#find {
+  width: 100%;
+  background-image: url('../public/images/hearts.png');
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.posts {
+  max-width: 100% !important;
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-block {
+  position: absolute !important;
+  background-color: rgba(60, 60, 60, .3) !important;
+  color: white !important;
+  bottom: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px;
+  font-family: 'Baloo 2';
+  font-weight: bold;
+}
+
+.text-block1 {
+  position: absolute !important;
+  background-color: rgba(60, 60, 60, .3) !important;
+  color: white !important;
+  bottom: 1px !important;
+  padding-left: 10px !important;
+  padding-right: 20px;
+  font-family: 'Baloo 2';
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* HEADER */
+.header {
+  border-bottom: 1px solid lightgray;
+  color: white;
+  padding: 3px;
+  padding-left: 10px;
+  background-image: url("../public/images/cold.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Baloo 2';
+}
+
+.login-page {
+  min-height: 100vh;
   background-image: url("../public/images/heart.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,6 +164,7 @@
   opacity: .8;
 }
 
+/* FOOTER */
 .navFooter {
   background-color: white;
   width: 100%;
@@ -56,6 +172,11 @@
   margin-top: auto;
   position: sticky;
   bottom: 0px;
+  border-top: 2px solid lightgray;
+  min-height: 95px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 0;
   border-top: 2px solid grey;
   min-height: 95px;
   padding-top: 15px;
@@ -67,6 +188,11 @@
   justify-content: space-around;
   margin: 0 !important;
   padding: 0 !important;
+  color:aliceblue;
+}
+
+.material-icons {
+
 }
 
 .logoutBtn button {

@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import SearchResults from "./SearchResults"
+import { Card, Form, Button } from 'react-bootstrap'
 
 const Search = () => {
   const navigate = useNavigate()
@@ -21,12 +22,13 @@ const Search = () => {
     <>
     <div className="content-body">
       <h3>Find others in your area</h3>
-      <form onSubmit={handleSearchSubmit}>
-        <input
+      <Form className="searchPage rounded" onSubmit={handleSearchSubmit}>
+      <Form.Group>
+        <Form.Control
           type="text"
           name="Search"
           id="Search"
-          placeholder="Search"
+          placeholder="Search Your City"
           required
           minLength="3"
           onChange={(event) => {
@@ -36,12 +38,13 @@ const Search = () => {
         />
         <br />
         <div className="findBtn">
-          <input type="submit" value="Find a Match" />
+          <Button id="find" as="input" type="submit" value="Find a Match" />
         </div>
-      </form>
       {results.map((result) => (
         <SearchResults result={result} />
       ))}
+      </Form.Group>
+      </Form>
       </div>
     </>
   )

@@ -22,10 +22,9 @@ const CreateProfile = () => {
   }
 
   return (
+    <div className="content-body">
     <Form className='create_page rounded' onSubmit={handleSubmit}>
-
       <Form.Group>
-
         <Form.Control name="name" type="text" required placeholder="full-name" />
         <br />
         <Form.Label htmlFor="profileImg">Upload profile pic</Form.Label>
@@ -51,10 +50,9 @@ const CreateProfile = () => {
         <br />
         {/* <input type="submit" value="Create profile" /> */}
         <Button as='input' type='submit' value='Save' />
-
       </Form.Group>
-
     </Form>
+    </div>
   )
 }
 
