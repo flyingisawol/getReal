@@ -2,7 +2,6 @@ import { useNavigate, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const Register = ({ setUser }) => {
-const Register = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -64,7 +63,6 @@ const Register = () => {
         </div>
       </div>
     </>
-  );
-};
-
+  )
+}
 export default Register
