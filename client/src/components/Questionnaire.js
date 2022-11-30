@@ -87,7 +87,7 @@ const Questionnaire = () => {
             <div className="finishedQuiz">
                 { finished ? <Button onClick={handleSubmit} className="finish-questionnaire" variant="warning">"You're all done, welcome... Click to continue"</Button> :
                     <div className='question-section'>  
-                        <div className='question-text'>{questions[questionIndex].questionText}
+                        <div className='question-text'>{questions[questionIndex].questionText}  
                     </div>
                     <div className='answer-section'>
                         {questions[questionIndex].answerOptions.map((answerOption) => (
@@ -98,8 +98,8 @@ const Questionnaire = () => {
                     </div>
                 }
             </div>
-        </Card>
         </div>
+        </Card>
         </div>
     )
 }

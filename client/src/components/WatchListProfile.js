@@ -44,5 +44,5 @@ const WatchListProfile = ({
     </>
   )
 }
-
+}
 export default WatchListProfile
