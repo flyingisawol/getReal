@@ -83,6 +83,7 @@ const Questionnaire = () => {
     return (
         <div className='content-body'>
         <Card>
+        <div className="questionnaire">
             <div className="finishedQuiz">
                 { finished ? <Button onClick={handleSubmit} className="finish-questionnaire" variant="warning">"You're all done, welcome... Click to continue"</Button> :
                     <div className='question-section'>  
@@ -97,6 +98,7 @@ const Questionnaire = () => {
                     </div>
                 }
             </div>
+        </div>
         </Card>
         </div>
     )

@@ -41,7 +41,6 @@
 }
 
 /* LOGIN AND REGISTRATION PAGES */
-
 .login-form {
   border: 1px solid grey;
   border-radius: 10px;
@@ -58,7 +57,7 @@
   justify-content: center;
   text-align: center;
   margin: 6px;
-  margin-bottom: 15px;;
+  margin-bottom: 15px;
 }
 
 .login-page {
@@ -67,28 +66,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: .8;
 }
 
 .login-button input {
   border: none;
-  background: blue;
+  width: 95%;
+  background: #3b5998;
   color: white;
-  display: flex;
-}
-
-.login-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: blue;
-  border-radius: 10px;
-  height: 55px;
-}
-
-.register-button {
-  display: flex;
-  justify-content: center;
+  border-radius: 5px;
 }
 
 img {
@@ -182,18 +167,9 @@ img {
 .header {
   border-bottom: 1px solid lightgray;
   background: red;
-  padding-left: 10px;
-}
-
-.logo {
-  max-width: 150px;
-  font-family: pacifico;
+  font-family: 'Pacifico';
   color: white;
-}
-
-.logo h2 {
-  font-size: 40px;
-  padding: 4px;
+  padding: 5px;
 }
 
 /* FOOTER */
@@ -209,6 +185,10 @@ img {
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 0;
+  border-top: 2px solid grey;
+  min-height: 95px;
+  padding-top: 15px;
+  padding-left: 5px;
 }
 
 .icons {
@@ -218,13 +198,13 @@ img {
   padding: 0 !important;
 }
 
-.material-icons {
-  
-}
-
 .logoutBtn button {
   border: none !important;
   background: none !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+img {
+  width: 100%;
 }

@@ -59,6 +59,7 @@ const EditProfile = ({ user }) => {
   return (
     <>
     <div className='content-body'>
+      <Button variant="primary" onClick={() => setModalShow(true)} />
     <div className='edit_page'>
       <Form className='edit_form rounded' onSubmit={handleSubmit}>
         <Form.Group>
