@@ -18,7 +18,6 @@ const HomeFeed = ({ user }) => {
 
     return (
       <div className="content-body">
-          {user && <Link to='/getreal/showall'>Show all users</Link>}
           {profiles.length > 0 && profiles.map((profile) => <Profile profile={profile} key={user.id} />)}
           {/* <h2>loading...</h2> */}
           

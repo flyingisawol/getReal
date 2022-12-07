@@ -4,7 +4,7 @@
   min-height: 100vh;
   margin-top: 10px;
   padding: 5px;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Baloo 2';
 }
 
 .edit_page {
@@ -24,7 +24,6 @@
   width: 93%;
 }
 
-
 #saveBtn {
   width: 100%;
 }
@@ -41,36 +40,61 @@
   max-width: 100%;
 }
 
-.form input {
+/* LOGIN AND REGISTRATION PAGES */
+.login-form {
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 0 5px lightslategray;
+  padding: 60px;
+}
+
+.login-form input {
   display: flex;
   flex-direction: column;
-  background: rgb(255,250,250, .5);
-  border: 2px solid black;
+  border: 1px solid lightgrey;
   border-radius: 20px;
   padding: 10px;
   justify-content: center;
   text-align: center;
+  margin: 6px;
+  margin-bottom: 15px;
 }
 
 .login-page {
-  min-height: 100vh;
-  background-image: url("../public/images/cold.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: .8;
 }
 
-.login input {
+.login-button input {
   border: none;
+  width: 95%;
+  background: #3b5998;
+  color: white;
+  border-radius: 5px;
 }
 
 img {
   width: 100%;
+}
+
+.select-button {
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
+.select-button :hover {
+  color: #690000;
+}
+
+.select-button:active {
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 /* QUESTIONNAIRE */
@@ -82,7 +106,7 @@ img {
   border-radius: 10px;
   box-sizing: border-box;
   padding: 10px;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Baloo 2';
 }
 
 .answer-btns {
@@ -142,38 +166,22 @@ img {
 /* HEADER */
 .header {
   border-bottom: 1px solid lightgray;
+  background: red;
+  font-family: 'Pacifico';
   color: white;
-  padding: 3px;
-  padding-left: 10px;
-  background-image: url("../public/images/cold.jpeg");
-  background-size: cover;
-  background-position: center;
-  font-family: 'Baloo 2';
-}
-
-.login-page {
-  min-height: 100vh;
-  background-image: url("../public/images/heart.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: .8;
+  padding: 5px;
 }
 
 /* FOOTER */
 .navFooter {
-  background-color: white;
+  background-color: #111111;
   width: 100%;
   color: white;
   margin-top: auto;
   position: sticky;
   bottom: 0px;
   border-top: 2px solid lightgray;
-  min-height: 95px;
+  min-height: 75px;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 0;
@@ -188,11 +196,6 @@ img {
   justify-content: space-around;
   margin: 0 !important;
   padding: 0 !important;
-  color:aliceblue;
-}
-
-.material-icons {
-
 }
 
 .logoutBtn button {

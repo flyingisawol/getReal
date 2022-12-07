@@ -36,20 +36,6 @@ const ShowAll = () => {
             </Card>
           ))}
       </div>
-      <div className='content-body'>
-      {p &&
-        p.map((profile) => (
-          <div className="show-all">
-            <Link to={`/getreal/${profile._id}`}>
-              <h1>{profile.name}</h1>
-              <img src={profile.profileImg} alt={profile.name} />
-            </Link>
-
-            <p>Age: {profile.age}</p>
-            <p>Location: {profile.location}</p>
-          </div>
-        ))}
-        </div>
     </>
   )
 }
